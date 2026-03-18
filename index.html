@@ -37,7 +37,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3rem 2rem;
+  padding: 5rem 2rem 3rem;
   background: var(--navy);
   position: relative;
   overflow: hidden;
@@ -101,9 +101,7 @@ body {
   margin-bottom: 2.8rem;
   flex-wrap: wrap;
 }
-.meta-item {
-  text-align: center;
-}
+.meta-item { text-align: center; }
 .meta-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2rem;
@@ -134,6 +132,19 @@ body {
   border-radius: 0;
 }
 .btn-start:hover { background: var(--accent); color: var(--navy); }
+
+.tagline-cover {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  white-space: nowrap;
+}
+
 .beta-banner {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -164,16 +175,6 @@ body {
   color: rgba(255,255,255,0.3);
   white-space: nowrap;
   letter-spacing: 0.04em;
-}
-#cover { padding-top: 5rem; }
-
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.2);
-  white-space: nowrap;
 }
 
 /* ── ASSESSMENT ── */
@@ -220,7 +221,6 @@ body {
   background: var(--midblue);
   transition: width 0.4s ease;
 }
-
 .axis-block { margin-bottom: 3.5rem; }
 .axis-header {
   display: flex;
@@ -248,10 +248,7 @@ body {
   color: var(--muted);
   font-style: italic;
 }
-
-.question-item {
-  margin-bottom: 2.2rem;
-}
+.question-item { margin-bottom: 2.2rem; }
 .question-text {
   font-size: 14.5px;
   color: var(--text);
@@ -268,15 +265,8 @@ body {
   font-style: italic;
   gap: 1rem;
 }
-.question-poles span {
-  max-width: 46%;
-  line-height: 1.4;
-}
-.scale-wrap {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
+.question-poles span { max-width: 46%; line-height: 1.4; }
+.scale-wrap { display: flex; gap: 8px; align-items: center; }
 .scale-btn {
   flex: 1;
   height: 38px;
@@ -288,19 +278,10 @@ body {
   font-size: 12px;
   color: var(--muted);
   transition: all 0.2s;
-  position: relative;
 }
 .scale-btn:hover { border-color: var(--midblue); color: var(--midblue); }
-.scale-btn.selected {
-  background: var(--navy);
-  border-color: var(--navy);
-  color: #fff;
-}
-.scale-btn.selected-mid {
-  background: var(--midblue);
-  border-color: var(--midblue);
-  color: #fff;
-}
+.scale-btn.selected { background: var(--navy); border-color: var(--navy); color: #fff; }
+.scale-btn.selected-mid { background: var(--midblue); border-color: var(--midblue); color: #fff; }
 .scale-labels {
   display: flex;
   justify-content: space-between;
@@ -309,7 +290,6 @@ body {
   margin-top: 4px;
   letter-spacing: 0.03em;
 }
-
 .nav-row {
   display: flex;
   justify-content: flex-end;
@@ -333,7 +313,7 @@ body {
   pointer-events: none;
 }
 .btn-next.ready { opacity: 1; pointer-events: auto; }
-.btn-next:hover.ready { background: var(--midblue); }
+.btn-next.ready:hover { background: var(--midblue); }
 
 /* ── RESULTS ── */
 #results { display: none; }
@@ -378,7 +358,6 @@ body {
   color: rgba(255,255,255,0.45);
   font-style: italic;
 }
-
 .section-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem;
@@ -388,8 +367,6 @@ body {
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border);
 }
-
-/* Constellation bars */
 .constellation-list { margin-bottom: 2.5rem; }
 .constellation-item { margin-bottom: 1.1rem; }
 .constellation-top {
@@ -398,38 +375,18 @@ body {
   align-items: baseline;
   margin-bottom: 5px;
 }
-.constellation-name {
-  font-weight: 500;
-  font-size: 14px;
-  color: var(--navy);
-}
-.constellation-family {
-  font-size: 11px;
-  color: var(--muted);
-  font-style: italic;
-}
+.constellation-name { font-weight: 500; font-size: 14px; color: var(--navy); }
+.constellation-family { font-size: 11px; color: var(--muted); font-style: italic; }
 .constellation-pct {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
   color: var(--midblue);
   font-weight: 300;
 }
-.bar-track {
-  height: 5px;
-  background: var(--warm);
-  border-radius: 2px;
-  overflow: hidden;
-}
-.bar-fill {
-  height: 100%;
-  border-radius: 2px;
-  background: var(--midblue);
-  transition: width 1s ease;
-}
+.bar-track { height: 5px; background: var(--warm); border-radius: 2px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 2px; background: var(--midblue); transition: width 1s ease; }
 .bar-fill.leading { background: var(--navy); }
 .bar-fill.shadow-bar { background: #c4b5a0; }
-
-/* Axis profile */
 .axis-profile { margin-bottom: 2.5rem; }
 .axis-row {
   display: grid;
@@ -438,23 +395,13 @@ body {
   gap: 10px;
   margin-bottom: 12px;
 }
-.axis-pole-label {
-  font-size: 11px;
-  color: var(--muted);
-  font-style: italic;
-}
+.axis-pole-label { font-size: 11px; color: var(--muted); font-style: italic; }
 .axis-pole-label.right { text-align: right; }
-.axis-spectrum {
-  position: relative;
-  height: 6px;
-  background: var(--warm);
-  border-radius: 3px;
-}
+.axis-spectrum { position: relative; height: 6px; background: var(--warm); border-radius: 3px; }
 .axis-marker {
   position: absolute;
   top: -4px;
-  width: 14px;
-  height: 14px;
+  width: 14px; height: 14px;
   border-radius: 50%;
   background: var(--navy);
   border: 2px solid var(--cream);
@@ -470,47 +417,16 @@ body {
   margin-bottom: -6px;
   font-weight: 500;
 }
-
-/* Family ring */
-.family-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 2.5rem;
-}
-.family-card {
-  padding: 1.1rem 1.2rem;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-}
-.family-card-name {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  margin-bottom: 4px;
-}
+.family-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 2.5rem; }
+.family-card { padding: 1.1rem 1.2rem; background: #fff; border: 1px solid var(--border); border-radius: 4px; }
+.family-card-name { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 4px; }
 .family-card-pct {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
-  color: var(--navy);
-  font-weight: 300;
-  line-height: 1;
-  margin-bottom: 6px;
+  font-size: 2rem; color: var(--navy);
+  font-weight: 300; line-height: 1; margin-bottom: 6px;
 }
-.family-bar-track {
-  height: 3px;
-  background: var(--warm);
-  border-radius: 1px;
-}
-.family-bar-fill {
-  height: 100%;
-  border-radius: 1px;
-  background: var(--midblue);
-}
-
-/* Shadow section */
+.family-bar-track { height: 3px; background: var(--warm); border-radius: 1px; }
+.family-bar-fill { height: 100%; border-radius: 1px; background: var(--midblue); }
 .shadow-card {
   background: var(--warm);
   border: 1px solid var(--border);
@@ -518,51 +434,16 @@ body {
   padding: 1.4rem 1.5rem;
   margin-bottom: 1rem;
 }
-.shadow-label {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
-.shadow-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--navy);
-  margin-bottom: 6px;
-}
-.shadow-desc {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.6;
-  font-style: italic;
-}
-
-/* Contemplative note */
-.contemplative-card {
-  background: var(--navy);
-  color: #fff;
-  border-radius: 4px;
-  padding: 1.6rem 1.8rem;
-  margin-bottom: 2.5rem;
-}
-.contemplative-label {
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.8rem;
-}
+.shadow-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); margin-bottom: 6px; }
+.shadow-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--navy); margin-bottom: 6px; }
+.shadow-desc { font-size: 13px; color: var(--muted); line-height: 1.6; font-style: italic; }
+.contemplative-card { background: var(--navy); color: #fff; border-radius: 4px; padding: 1.6rem 1.8rem; margin-bottom: 2.5rem; }
+.contemplative-label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
 .contemplative-text {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  font-weight: 300;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.82);
-  font-style: italic;
+  font-size: 1.1rem; font-weight: 300; line-height: 1.7;
+  color: rgba(255,255,255,0.82); font-style: italic;
 }
-
 .btn-restart {
   display: inline-block;
   padding: 12px 32px;
@@ -578,17 +459,9 @@ body {
   margin-top: 1rem;
   transition: all 0.2s;
 }
-.footer-brand {
-  text-align: center;
-  margin-top: 1.5rem;
-  font-size: 10px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
 .btn-restart:hover { background: var(--navy); color: #fff; }
 
+.btn-pdf {
   display: inline-block;
   padding: 12px 32px;
   border: 1px solid var(--midblue);
@@ -606,10 +479,18 @@ body {
 }
 .btn-pdf:hover { background: var(--navy); border-color: var(--navy); }
 .btn-pdf:disabled { opacity: 0.5; cursor: wait; }
+
+.footer-brand {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
 @media print {
   .btn-restart, .btn-pdf, .beta-banner, .progress-bar-wrap { display: none !important; }
 }
-
 .disclaimer {
   font-size: 11px;
   color: var(--muted);
@@ -620,68 +501,25 @@ body {
   border-top: 1px solid var(--border);
   line-height: 1.7;
 }
-.cycle-section {
-  margin: 2.5rem 0;
-  border-top: 1px solid var(--border);
-  padding-top: 2rem;
-}
-.cycle-heading {
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--midblue);
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
+.cycle-section { margin: 2.5rem 0; border-top: 1px solid var(--border); padding-top: 2rem; }
+.cycle-heading { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--midblue); text-align: center; margin-bottom: 0.5rem; }
 .cycle-subheading {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  font-weight: 300;
-  color: var(--navy);
-  text-align: center;
-  margin-bottom: 1.8rem;
-  font-style: italic;
+  font-size: 1.3rem; font-weight: 300; color: var(--navy);
+  text-align: center; margin-bottom: 1.8rem; font-style: italic;
 }
-.cycle-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 1.6rem;
-}
-.cycle-card {
-  border-radius: 4px;
-  padding: 1rem 0.9rem;
-  text-align: center;
-  border: 1px solid var(--border);
-}
-.cycle-word {
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-.cycle-desc {
-  font-size: 11px;
-  color: var(--muted);
-  line-height: 1.55;
-  margin-bottom: 8px;
-}
+.cycle-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 1.6rem; }
+.cycle-card { border-radius: 4px; padding: 1rem 0.9rem; text-align: center; border: 1px solid var(--border); }
+.cycle-word { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+.cycle-desc { font-size: 11px; color: var(--muted); line-height: 1.55; margin-bottom: 8px; }
 .cycle-link {
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-weight: 500;
-  text-decoration: none;
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 2px;
-  margin-top: 2px;
+  font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+  font-weight: 500; text-decoration: none; display: inline-block;
+  padding: 4px 10px; border-radius: 2px; margin-top: 2px;
 }
 @media (max-width: 580px) {
   .cycle-grid { grid-template-columns: 1fr 1fr; }
 }
-
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
@@ -701,18 +539,9 @@ body {
     <p class="cover-subtitle">When do you come alive creatively?</p>
     <p class="cover-desc">This is not a personality test. It is a resonance mapping instrument — designed to surface the specific conditions under which your creativity activates.</p>
     <div class="cover-meta">
-      <div class="meta-item">
-        <span class="meta-num">16</span>
-        <span class="meta-label">Questions</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-num">~8</span>
-        <span class="meta-label">Minutes</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-num">4</span>
-        <span class="meta-label">Axes</span>
-      </div>
+      <div class="meta-item"><span class="meta-num">16</span><span class="meta-label">Questions</span></div>
+      <div class="meta-item"><span class="meta-num">~8</span><span class="meta-label">Minutes</span></div>
+      <div class="meta-item"><span class="meta-num">4</span><span class="meta-label">Axes</span></div>
     </div>
     <button class="btn-start" onclick="startAssessment()">Begin</button>
   </div>
@@ -731,8 +560,6 @@ body {
     </div>
   </div>
   <div class="assessment-wrap" id="questions-container"></div>
-</div>
-
 </div>
 
 <!-- NAME PROMPT -->
@@ -759,73 +586,59 @@ body {
       <h2 class="results-name" id="results-leading-name">—</h2>
       <p class="results-tagline" id="results-leading-family">—</p>
     </div>
-
     <div style="margin-bottom:2.5rem;">
       <div class="section-title">Active personas — resonance profile</div>
       <div class="constellation-list" id="persona-bars"></div>
     </div>
-
     <div class="axis-profile" id="axis-profile-section">
       <div class="section-title">Axis polarity profile</div>
       <div id="axis-rows"></div>
     </div>
-
     <div style="margin-bottom:2.5rem;">
       <div class="section-title">Family distribution</div>
       <p style="font-size:13px;color:var(--muted);margin-bottom:1.4rem;font-style:italic;line-height:1.7;">The 16 personas are organized into four creative families — each representing a distinct orientation toward creative work. Your distribution shows how your resonance is weighted across these domains. A high percentage in a family means many of its personas match your conditions; it does not mean the others are unavailable, only that they require different circumstances to activate.</p>
       <div class="family-grid" id="family-grid"></div>
     </div>
-
     <div style="margin-bottom:2.5rem;">
       <div class="section-title">Shadow archetypes</div>
       <p style="font-size:13px;color:var(--muted);margin-bottom:1.2rem;font-style:italic;">The creative energies furthest from your current profile — not what you lack, but what requires different conditions to activate.</p>
       <div id="shadow-cards"></div>
     </div>
-
     <div class="contemplative-card">
       <div class="contemplative-label">Contemplative anchor</div>
       <div class="contemplative-text" id="contemplative-text">—</div>
     </div>
-
-    <!-- PLAY · REFLECT · GROW · REPEAT CYCLE -->
     <div class="cycle-section">
       <div class="cycle-heading">What comes next</div>
       <p class="cycle-subheading">Your results are the beginning, not the end.</p>
       <div class="cycle-grid">
-
         <div class="cycle-card" style="border-color:#1D9E75;background:#E1F5EE08;">
           <div class="cycle-word" style="color:#1D9E75;">Play</div>
           <div class="cycle-desc">You just explored your creative conditions without pressure or judgement. This is where every cycle begins.</div>
           <a class="cycle-link" style="background:#E1F5EE;color:#0F6E56;" href="https://creactivity-by-chloe.github.io/cci-assessment/" target="_blank">Take the CCI again</a>
         </div>
-
         <div class="cycle-card" style="border-color:#185FA5;background:#E6F1FB08;">
           <div class="cycle-word" style="color:#185FA5;">Reflect</div>
           <div class="cycle-desc">Sit with what emerged. Your results are a mirror. And if you want to go deeper — bring them to a coaching conversation.</div>
           <a class="cycle-link" style="background:#E6F1FB;color:#185FA5;" href="https://www.creactivity.ca" target="_blank">1:1 Creativity Coaching</a>
         </div>
-
         <div class="cycle-card" style="border-color:#534AB7;background:#EEEDFE08;">
           <div class="cycle-word" style="color:#534AB7;">Grow</div>
           <div class="cycle-desc">Learn to use the CPM and CCI with your own clients and communities. Become a certified creativity coach.</div>
           <a class="cycle-link" style="background:#EEEDFE;color:#534AB7;" href="https://www.creactivity.ca" target="_blank">CCE Program</a>
         </div>
-
         <div class="cycle-card" style="border-color:#854F0B;background:#FAEEDA08;">
           <div class="cycle-word" style="color:#854F0B;">Repeat</div>
           <div class="cycle-desc">Conditions change. Seasons change. You change. Return to the CCI periodically — your constellation will shift with you.</div>
           <a class="cycle-link" style="background:#FAEEDA;color:#854F0B;" onclick="restart()" style="cursor:pointer;">Begin again →</a>
         </div>
-
       </div>
       <p style="text-align:center;font-size:11px;color:var(--muted);font-style:italic;letter-spacing:0.06em;">Play · Reflect · Grow · Repeat</p>
     </div>
-
     <div style="text-align:center;">
       <button class="btn-restart" onclick="restart()">Take again</button>
       <button class="btn-pdf" id="btn-pdf" onclick="downloadPDF()">Download results as PDF</button>
     </div>
-
     <div class="disclaimer">
       <strong style="display:block;margin-bottom:6px;font-style:normal;letter-spacing:0.05em;font-size:10px;text-transform:uppercase;">Beta Testing Version — Not for Public Distribution</strong>
       The CCI is a resonance mapping instrument grounded in the Creativity Persona Map (CPM) framework.<br>
@@ -879,25 +692,23 @@ const QUESTIONS = [
   }
 ];
 
-// Persona axis signatures: [A01, A02, A03, A04] each -2 to +2
-// Negative = left pole, Positive = right pole, 0 = center
 const PERSONAS = [
-  { name: 'Dreamer',     family: 'Exploration & Vision',      sig: [-2,  -2,  -1,   0], contribution: 'holds the space of possibility before anything is made', shadow: 'Maker' },
-  { name: 'Explorer',    family: 'Exploration & Vision',      sig: [-2,   0,  -1,   1], contribution: 'moves into unknown territory driven by curiosity', shadow: 'Cartographer' },
-  { name: 'Visionary',   family: 'Exploration & Vision',      sig: [-2,   0,   2,  -2], contribution: 'sees what could exist and orients others toward it', shadow: 'Gardener' },
-  { name: 'Improviser',  family: 'Exploration & Vision',      sig: [-2,   2,   0,   1], contribution: 'generates in the moment, responsive and adaptive', shadow: 'Architect' },
-  { name: 'Architect',   family: 'Structure & Cultivation',   sig: [ 2,  -1,   1,  -2], contribution: 'builds rigorous systems that hold creative vision', shadow: 'Improviser' },
-  { name: 'Gardener',    family: 'Structure & Cultivation',   sig: [ 1,  -2,  -1,   1], contribution: 'tends conditions patiently so things can grow', shadow: 'Visionary' },
-  { name: 'Cartographer',family: 'Structure & Cultivation',   sig: [ 1,  -2,   1,  -2], contribution: 'maps the terrain so others can navigate', shadow: 'Explorer' },
-  { name: 'Maker',       family: 'Structure & Cultivation',   sig: [ 2,   1,   1,   2], contribution: 'brings form into the world through skilled making', shadow: 'Dreamer' },
-  { name: 'Weaver',      family: 'Connection & Meaning',      sig: [ 0,  -1,   1,   0], contribution: 'finds and holds the threads between people and ideas', shadow: 'Catalyst' },
-  { name: 'Bridge',      family: 'Connection & Meaning',      sig: [ 1,   0,   1,   0], contribution: 'translates between worlds, makes the foreign accessible', shadow: 'Seeker' },
-  { name: 'Storyteller', family: 'Connection & Meaning',      sig: [-1,   0,   2,  -1], contribution: 'shapes experience into meaning through narrative', shadow: 'Maker' },
-  { name: 'Witness',     family: 'Connection & Meaning',      sig: [ 0,  -2,  -2,   0], contribution: 'holds deep presence and attention for what is', shadow: 'Catalyst' },
-  { name: 'Catalyst',    family: 'Activation & Transformation', sig: [-1,  2,   2,   1], contribution: 'ignites movement and transformation in others', shadow: 'Witness' },
-  { name: 'Alchemist',   family: 'Activation & Transformation', sig: [-1,  0,   2,   0], contribution: 'transforms raw material — experience, tension, chaos — into meaning', shadow: 'Cartographer' },
-  { name: 'Seeker',      family: 'Activation & Transformation', sig: [-2,  0,  -2,  -1], contribution: 'pursues depth and truth driven by intrinsic questioning', shadow: 'Bridge' },
-  { name: 'Listener',    family: 'Activation & Transformation', sig: [ 0, -1,   0,   0], contribution: 'activates through receptive, attuned, open presence', shadow: 'Improviser' },
+  { name: 'Dreamer',      family: 'Exploration & Vision',         sig: [-2, -2, -1,  0], contribution: 'holds the space of possibility before anything is made', shadow: 'Maker' },
+  { name: 'Explorer',     family: 'Exploration & Vision',         sig: [-2,  0, -1,  1], contribution: 'moves into unknown territory driven by curiosity', shadow: 'Cartographer' },
+  { name: 'Visionary',    family: 'Exploration & Vision',         sig: [-2,  0,  2, -2], contribution: 'sees what could exist and orients others toward it', shadow: 'Gardener' },
+  { name: 'Improviser',   family: 'Exploration & Vision',         sig: [-2,  2,  0,  1], contribution: 'generates in the moment, responsive and adaptive', shadow: 'Architect' },
+  { name: 'Architect',    family: 'Structure & Cultivation',      sig: [ 2, -1,  1, -2], contribution: 'builds rigorous systems that hold creative vision', shadow: 'Improviser' },
+  { name: 'Gardener',     family: 'Structure & Cultivation',      sig: [ 1, -2, -1,  1], contribution: 'tends conditions patiently so things can grow', shadow: 'Visionary' },
+  { name: 'Cartographer', family: 'Structure & Cultivation',      sig: [ 1, -2,  1, -2], contribution: 'maps the terrain so others can navigate', shadow: 'Explorer' },
+  { name: 'Maker',        family: 'Structure & Cultivation',      sig: [ 2,  1,  1,  2], contribution: 'brings form into the world through skilled making', shadow: 'Dreamer' },
+  { name: 'Weaver',       family: 'Connection & Meaning',         sig: [ 0, -1,  1,  0], contribution: 'finds and holds the threads between people and ideas', shadow: 'Catalyst' },
+  { name: 'Bridge',       family: 'Connection & Meaning',         sig: [ 1,  0,  1,  0], contribution: 'translates between worlds, makes the foreign accessible', shadow: 'Seeker' },
+  { name: 'Storyteller',  family: 'Connection & Meaning',         sig: [-1,  0,  2, -1], contribution: 'shapes experience into meaning through narrative', shadow: 'Maker' },
+  { name: 'Witness',      family: 'Connection & Meaning',         sig: [ 0, -2, -2,  0], contribution: 'holds deep presence and attention for what is', shadow: 'Catalyst' },
+  { name: 'Catalyst',     family: 'Activation & Transformation',  sig: [-1,  2,  2,  1], contribution: 'ignites movement and transformation in others', shadow: 'Witness' },
+  { name: 'Alchemist',    family: 'Activation & Transformation',  sig: [-1,  0,  2,  0], contribution: 'transforms raw material — experience, tension, chaos — into meaning', shadow: 'Cartographer' },
+  { name: 'Seeker',       family: 'Activation & Transformation',  sig: [-2,  0, -2, -1], contribution: 'pursues depth and truth driven by intrinsic questioning', shadow: 'Bridge' },
+  { name: 'Listener',     family: 'Activation & Transformation',  sig: [ 0, -1,  0,  0], contribution: 'activates through receptive, attuned, open presence', shadow: 'Improviser' },
 ];
 
 const FAMILY_COLORS = {
@@ -908,10 +719,10 @@ const FAMILY_COLORS = {
 };
 
 const AXIS_INFO = [
-  { code: 'A01', name: 'Value', poleL: 'Novelty & openness', poleR: 'Usefulness & purpose' },
-  { code: 'A02', name: 'Time', poleL: 'Spacious & ecological', poleR: 'Sprint & urgency' },
-  { code: 'A03', name: 'Motivation', poleL: 'Ignited — pull from within', poleR: 'Emergent — drawn through process' },
-  { code: 'A04', name: 'Mode', poleL: 'Thinking & concept', poleR: 'Making & embodied' },
+  { code: 'A01', name: 'Value',      poleL: 'Novelty & openness',           poleR: 'Usefulness & purpose' },
+  { code: 'A02', name: 'Time',       poleL: 'Spacious & ecological',         poleR: 'Sprint & urgency' },
+  { code: 'A03', name: 'Motivation', poleL: 'Ignited — pull from within',    poleR: 'Emergent — drawn through process' },
+  { code: 'A04', name: 'Mode',       poleL: 'Thinking & concept',            poleR: 'Making & embodied' },
 ];
 
 const CONTEMPLATIVE_TEXTS = [
@@ -947,25 +758,18 @@ function renderAxis(axisIdx) {
   currentAxis = axisIdx;
   const axis = QUESTIONS[axisIdx];
   const container = document.getElementById('questions-container');
-  
-  const answeredBefore = axis.items.map((_, i) => answers[`${axisIdx}_${i}`]);
-  
   let html = `<div class="axis-block">
     <div class="axis-header">
       <span class="axis-code">${axis.axis}</span>
       <span class="axis-name">${axis.axisName}</span>
     </div>
     <p class="axis-hint" style="margin-bottom:1.8rem;font-size:13px;color:var(--muted);font-style:italic;">${axis.axisHint}</p>`;
-
   axis.items.forEach((item, i) => {
     const qKey = `${axisIdx}_${i}`;
     const selected = answers[qKey];
     html += `<div class="question-item" id="qi_${axisIdx}_${i}">
       <div class="question-text">${item.q}</div>
-      <div class="question-poles">
-        <span>${item.poleL}</span>
-        <span>${item.poleR}</span>
-      </div>
+      <div class="question-poles"><span>${item.poleL}</span><span>${item.poleR}</span></div>
       <div class="scale-wrap">`;
     for (let v = 1; v <= 5; v++) {
       const isSel = selected === v;
@@ -977,53 +781,38 @@ function renderAxis(axisIdx) {
       <div class="scale-labels"><span>← ${item.poleL.split(' — ')[0].substring(0,28)}</span><span>center</span><span>${item.poleR.split(' — ')[0].substring(0,28)} →</span></div>
     </div>`;
   });
-
   html += `<div class="nav-row">
     <button class="btn-next" id="btn-next-${axisIdx}" onclick="nextAxis(${axisIdx})">
       ${axisIdx < 3 ? 'Next axis →' : 'See my results →'}
     </button>
   </div></div>`;
-
   container.innerHTML = html;
-  container.scrollTop = 0;
   window.scrollTo(0, 0);
   checkAxisComplete(axisIdx);
 }
 
 function selectAnswer(axisIdx, itemIdx, value) {
-  const qKey = `${axisIdx}_${itemIdx}`;
-  answers[qKey] = value;
-  
-  // Update buttons
+  answers[`${axisIdx}_${itemIdx}`] = value;
   const qi = document.getElementById(`qi_${axisIdx}_${itemIdx}`);
   qi.querySelectorAll('.scale-btn').forEach((btn, i) => {
     const v = i + 1;
     const isMid = v === 3;
-    if (v === value) {
-      btn.className = isMid ? 'scale-btn selected-mid' : 'scale-btn selected';
-    } else {
-      btn.className = 'scale-btn';
-    }
+    btn.className = v === value ? (isMid ? 'scale-btn selected-mid' : 'scale-btn selected') : 'scale-btn';
   });
-  
   checkAxisComplete(axisIdx);
   updateProgress();
 }
 
 function checkAxisComplete(axisIdx) {
-  const axis = QUESTIONS[axisIdx];
-  const allAnswered = axis.items.every((_, i) => answers[`${axisIdx}_${i}`] !== undefined);
+  const allAnswered = QUESTIONS[axisIdx].items.every((_, i) => answers[`${axisIdx}_${i}`] !== undefined);
   const btn = document.getElementById(`btn-next-${axisIdx}`);
   if (btn) btn.className = allAnswered ? 'btn-next ready' : 'btn-next';
 }
 
 function updateProgress() {
-  const total = 16;
   const answered = Object.keys(answers).length;
-  const pct = Math.round((answered / total) * 100);
+  const pct = Math.round((answered / 16) * 100);
   document.getElementById('progress-fill').style.width = Math.max(6, pct) + '%';
-  const q = QUESTIONS[currentAxis];
-  const qNum = currentAxis * 4 + Object.keys(answers).filter(k => k.startsWith(currentAxis + '_')).length;
   document.getElementById('progress-count').textContent = `${Math.min(answered + 1, 16)} of 16`;
 }
 
@@ -1047,77 +836,51 @@ function confirmName() {
 function showResults() {
   document.getElementById('results').style.display = 'block';
   window.scrollTo(0, 0);
-
-  // Personalise eyebrow greeting
   const eyebrow = document.getElementById('results-eyebrow');
   eyebrow.textContent = userName ? `${userName}'s creative constellation` : 'Your creative constellation';
-
-  // Compute axis scores: mean of 4 items, mapped from [1,5] to [-2,2]
   const axisScores = QUESTIONS.map((axis, ai) => {
     const vals = axis.items.map((_, i) => answers[`${ai}_${i}`]);
     const mean = vals.reduce((a, b) => a + b, 0) / vals.length;
-    return ((mean - 3) / 2) * 2; // [1,5] -> [-2,2]
+    return ((mean - 3) / 2) * 2;
   });
-
-  // Compute persona resonance: inverse of euclidean distance
   const personaScores = PERSONAS.map(p => {
     const dist = Math.sqrt(p.sig.reduce((acc, s, i) => acc + Math.pow(s - axisScores[i], 2), 0));
     return { ...p, dist, resonance: 0 };
   });
-
-  // Normalize to resonance %
   const maxDist = Math.max(...personaScores.map(p => p.dist));
   const minDist = Math.min(...personaScores.map(p => p.dist));
   personaScores.forEach(p => {
     p.resonance = Math.round(((maxDist - p.dist) / (maxDist - minDist + 0.001)) * 100);
   });
-
-  // Sort by resonance
   personaScores.sort((a, b) => b.resonance - a.resonance);
-
-  // Leading persona
   const leading = personaScores[0];
   document.getElementById('results-leading-name').textContent = leading.name;
   document.getElementById('results-leading-family').textContent = leading.family;
-
-  // Persona bars — top 8
   const barsEl = document.getElementById('persona-bars');
   barsEl.innerHTML = personaScores.slice(0, 8).map((p, i) => {
     const col = FAMILY_COLORS[p.family] || '#1A6EA8';
-    const barClass = i === 0 ? 'bar-fill leading' : 'bar-fill';
     return `<div class="constellation-item">
       <div class="constellation-top">
-        <div>
-          <span class="constellation-name">${p.name}</span>
-          <span class="constellation-family"> · ${p.family}</span>
-        </div>
+        <div><span class="constellation-name">${p.name}</span><span class="constellation-family"> · ${p.family}</span></div>
         <span class="constellation-pct">${p.resonance}%</span>
       </div>
       <div class="bar-track">
-        <div class="${barClass}" style="width:0%;background:${i===0?'var(--navy)':col}" data-w="${p.resonance}%"></div>
+        <div class="${i===0?'bar-fill leading':'bar-fill'}" style="width:0%;background:${i===0?'var(--navy)':col}" data-w="${p.resonance}%"></div>
       </div>
     </div>`;
   }).join('');
-
-  // Axis profile
   const axisRows = document.getElementById('axis-rows');
   axisRows.innerHTML = AXIS_INFO.map((ax, i) => {
-    const score = axisScores[i]; // -2 to +2
-    const pct = Math.round(((score + 2) / 4) * 100); // 0–100%
+    const pct = Math.round(((axisScores[i] + 2) / 4) * 100);
     return `<div style="margin-bottom:16px;">
       <div class="axis-code-label">${ax.code} — ${ax.name}</div>
       <div class="axis-row">
         <span class="axis-pole-label">${ax.poleL}</span>
-        <div class="axis-spectrum">
-          <div class="axis-marker" style="left:${pct}%"></div>
-        </div>
+        <div class="axis-spectrum"><div class="axis-marker" style="left:${pct}%"></div></div>
         <span class="axis-pole-label right">${ax.poleR}</span>
       </div>
     </div>`;
   }).join('');
-
-  // Family distribution
-  const familyTotals = {};
   const families = ['Exploration & Vision', 'Structure & Cultivation', 'Connection & Meaning', 'Activation & Transformation'];
   const familyDescriptors = {
     'Exploration & Vision': 'Dreamer · Explorer · Visionary · Improviser — creativity as possibility, discovery, and generative openness',
@@ -1125,39 +888,30 @@ function showResults() {
     'Connection & Meaning': 'Weaver · Bridge · Storyteller · Witness — creativity as relationship, translation, and presence',
     'Activation & Transformation': 'Catalyst · Alchemist · Seeker · Listener — creativity as ignition, depth, and transformative engagement',
   };
+  const familyTotals = {};
   families.forEach(f => { familyTotals[f] = 0; });
   personaScores.forEach(p => { familyTotals[p.family] += p.resonance; });
   const totalFamilyScore = Object.values(familyTotals).reduce((a, b) => a + b, 0);
-  const familyGrid = document.getElementById('family-grid');
-  familyGrid.innerHTML = families.map(f => {
+  document.getElementById('family-grid').innerHTML = families.map(f => {
     const pct = Math.round((familyTotals[f] / totalFamilyScore) * 100);
     const color = FAMILY_COLORS[f];
     return `<div class="family-card" style="border-left:4px solid ${color};border-radius:0 4px 4px 0;">
       <div class="family-card-name" style="color:${color}">${f}</div>
-      <div class="family-card-pct" style="color:var(--navy)">${pct}%</div>
-      <div class="family-bar-track">
-        <div class="family-bar-fill" style="width:${pct}%;background:${color}"></div>
-      </div>
+      <div class="family-card-pct">${pct}%</div>
+      <div class="family-bar-track"><div class="family-bar-fill" style="width:${pct}%;background:${color}"></div></div>
       <div style="font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5;font-style:italic;">${familyDescriptors[f]}</div>
     </div>`;
   }).join('');
-
-  // Shadow archetypes — bottom 2 by resonance (most distant)
   const shadows = [...personaScores].slice(-2).reverse();
-  const shadowCards = document.getElementById('shadow-cards');
-  shadowCards.innerHTML = shadows.map(p => {
-    return `<div class="shadow-card">
+  document.getElementById('shadow-cards').innerHTML = shadows.map(p =>
+    `<div class="shadow-card">
       <div class="shadow-label">Shadow archetype · ${p.resonance}% resonance</div>
       <div class="shadow-name">${p.name}</div>
       <div class="shadow-desc">The ${p.name} energy — ${p.contribution} — sits at the furthest point from your current creative conditions. This is not a deficit; it is an invitation. What would it take to create the conditions where this energy could emerge?</div>
-    </div>`;
-  }).join('');
-
-  // Contemplative anchor
+    </div>`
+  ).join('');
   const anchor = CONTEMPLATIVE_TEXTS.find(c => c.condition(axisScores)) || CONTEMPLATIVE_TEXTS[0];
   document.getElementById('contemplative-text').textContent = anchor.text;
-
-  // Animate bars after render
   setTimeout(() => {
     document.querySelectorAll('.bar-fill[data-w]').forEach(el => {
       el.style.width = el.getAttribute('data-w');
@@ -1176,7 +930,6 @@ function restart() {
   window.scrollTo(0, 0);
 }
 
-// Beta protection — deter casual copying
 document.addEventListener('contextmenu', e => e.preventDefault());
 document.addEventListener('keydown', e => {
   if (e.key === 'F12') e.preventDefault();
@@ -1195,11 +948,9 @@ function downloadPDF() {
   const namePrefix = userName ? userName.replace(/\s+/g, '-') + '-' : '';
   const filename = 'CCI-Results-' + namePrefix + leadingName.replace(/\s+/g, '-') + '.pdf';
 
-  // Build a clean flat HTML element for pdf capture
   const wrap = document.createElement('div');
-  wrap.style.cssText = 'width:680px;font-family:Georgia,serif;color:#1a1a1a;background:#fff;padding:40px 48px;';
+  wrap.style.cssText = 'position:fixed;left:-9999px;top:0;width:700px;font-family:Georgia,serif;color:#1a1a1a;background:#fff;padding:40px 48px;';
 
-  // Header
   wrap.innerHTML = `
     <div style="border-bottom:3px solid #0D2233;padding-bottom:20px;margin-bottom:28px;">
       <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#2E86C1;margin-bottom:8px;">CreActivity · Creativity Conditions Inventory</div>
@@ -1215,7 +966,7 @@ function downloadPDF() {
         const family = item.querySelector('.constellation-family')?.textContent || '';
         const pct = item.querySelector('.constellation-pct')?.textContent || '';
         const pctNum = parseInt(pct);
-        const isLeading = pctNum === 100;
+        const isLeading = pctNum >= 95;
         return `<div style="margin-bottom:10px;">
           <div style="display:table;width:100%;table-layout:fixed;margin-bottom:4px;">
             <div style="display:table-cell;"><span style="font-size:12px;font-weight:${isLeading?'700':'500'};color:#0D2233;">${name}</span><span style="font-weight:400;font-style:italic;color:#888;font-size:11px;">${family}</span></div>
@@ -1235,7 +986,6 @@ function downloadPDF() {
         const marker = row.querySelector('.axis-marker');
         const rawPct = marker ? parseInt(marker.style.left) : 50;
         const clampedPct = Math.min(96, Math.max(4, rawPct));
-        const dotOffset = Math.round((clampedPct / 100) * 360);
         return `<div style="margin-bottom:12px;">
           <div style="font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#2E86C1;margin-bottom:5px;font-weight:600;">${code}</div>
           <div style="display:table;width:100%;table-layout:fixed;">
@@ -1254,7 +1004,7 @@ function downloadPDF() {
 
     <div style="margin-bottom:24px;">
       <div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#0D2233;border-bottom:1px solid #ddd;padding-bottom:6px;margin-bottom:10px;font-weight:600;">Family distribution</div>
-      <div style="font-size:10px;color:#888;font-style:italic;margin-bottom:14px;line-height:1.6;">The 16 personas are organized into four creative families. Your distribution shows how your resonance is weighted across these domains — a higher percentage means more of that family's conditions match your current profile.</div>
+      <div style="font-size:10px;color:#888;font-style:italic;margin-bottom:14px;line-height:1.6;">The 16 personas are organized into four creative families. Your distribution shows how your resonance is weighted across these domains.</div>
       <div style="display:table;width:100%;table-layout:fixed;border-collapse:separate;border-spacing:6px 0;">
         ${Array.from(document.querySelectorAll('#family-grid .family-card')).map(card => {
           const name = card.querySelector('.family-card-name')?.textContent || '';
@@ -1268,12 +1018,11 @@ function downloadPDF() {
             'Connection & Meaning': 'Weaver · Bridge · Storyteller · Witness',
             'Activation & Transformation': 'Catalyst · Alchemist · Seeker · Listener',
           };
-          const desc = descriptors[name] || '';
-          return `<div style="display:table-cell;border-left:3px solid ${color};border-top:1px solid #eee;border-right:1px solid #eee;border-bottom:1px solid #eee;border-radius:0 4px 4px 0;padding:10px 10px;vertical-align:top;">
-            <div style="font-size:8px;text-transform:uppercase;letter-spacing:0.08em;color:${color};margin-bottom:4px;line-height:1.4;font-weight:600;">${name}</div>
+          return `<div style="display:table-cell;border-left:3px solid ${color};border-top:1px solid #eee;border-right:1px solid #eee;border-bottom:1px solid #eee;border-radius:0 4px 4px 0;padding:10px;vertical-align:top;">
+            <div style="font-size:8px;text-transform:uppercase;letter-spacing:0.08em;color:${color};margin-bottom:4px;font-weight:600;">${name}</div>
             <div style="font-size:22px;font-weight:300;color:#0D2233;line-height:1;margin-bottom:5px;">${pct}</div>
             <div style="height:3px;background:#eee;border-radius:1px;margin-bottom:6px;"><div style="height:3px;background:${color};width:${pctNum}%;border-radius:1px;"></div></div>
-            <div style="font-size:8px;color:#aaa;font-style:italic;line-height:1.4;">${desc}</div>
+            <div style="font-size:8px;color:#aaa;font-style:italic;line-height:1.4;">${descriptors[name]||''}</div>
           </div>`;
         }).join('')}
       </div>
@@ -1300,9 +1049,10 @@ function downloadPDF() {
     </div>
 
     <div style="border-top:1px solid #ddd;padding-top:14px;text-align:center;">
-      <div style="font-size:9px;color:#aaa;font-style:italic;line-height:1.7;">Beta Testing Version — Not for Public Distribution<br>
-      The CCI is a resonance mapping instrument grounded in the Creativity Persona Map (CPM) framework.<br>
-      © 2025 CreActivity · Chloe Tiryaki, ACC · creactivity.ca · All rights reserved</div>
+      <div style="font-size:9px;color:#aaa;font-style:italic;line-height:1.7;">
+        The CCI is a resonance mapping instrument grounded in the Creativity Persona Map (CPM) framework.<br>
+        © 2025 CreActivity · Chloe Tiryaki, ACC · creactivity.ca · All rights reserved
+      </div>
     </div>
   `;
 
@@ -1312,7 +1062,7 @@ function downloadPDF() {
     margin: [8, 8, 8, 8],
     filename,
     image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff' },
+    html2canvas: { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff', windowWidth: 700 },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
     pagebreak: { mode: 'avoid-all' }
   };
@@ -1321,7 +1071,8 @@ function downloadPDF() {
     document.body.removeChild(wrap);
     btn.disabled = false;
     btn.textContent = 'Download results as PDF';
-  }).catch(() => {
+  }).catch((err) => {
+    console.error('PDF error:', err);
     document.body.removeChild(wrap);
     btn.disabled = false;
     btn.textContent = 'Download results as PDF';
