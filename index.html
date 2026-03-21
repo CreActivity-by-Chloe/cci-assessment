@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creativity Conditions Inventory — CreActivity</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Creativity Conditions Inventory — Beta testing, not for public distribution.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0D2233;
+  --blue: #1A6EA8;
+  --midblue: #2E86C1;
+  --accent: #7EC8E3;
+  --light: #E8F4FA;
+  --cream: #F8F6F1;
+  --warm: #F2EDE4;
+  --text: #1a1a1a;
+  --muted: #6b7280;
+  --border: #ddd6cc;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  min-height: 100vh;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ── COVER ── */
+#cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+#cover::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 400px; height: 400px;
+  border: 1px solid rgba(126,200,227,0.12);
+  border-radius: 50%;
+}
+#cover::after {
+  content: '';
+  position: absolute;
+  bottom: -120px; left: -60px;
+  width: 500px; height: 500px;
+  border: 1px solid rgba(126,200,227,0.07);
+  border-radius: 50%;
+}
+.cover-inner { max-width: 560px; text-align: center; position: relative; z-index: 1; }
+.cover-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.8rem;
+}
+.cover-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+.cover-title em { font-style: italic; color: var(--accent); }
+.cover-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 2.4rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+.cover-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  max-width: 420px;
+  margin: 0 auto 2.8rem;
+  line-height: 1.75;
+}
+.cover-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.8rem;
+  flex-wrap: wrap;
+}
+.meta-item {
+  text-align: center;
+}
+.meta-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+}
+.meta-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.btn-start {
+  display: inline-block;
+  padding: 14px 42px;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 0;
+}
+.btn-start:hover { background: var(--accent); color: var(--navy); }
+.beta-banner {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: #1a3a52;
+  border-bottom: 1px solid rgba(126,200,227,0.25);
+  padding: 7px 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.beta-banner-text {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.05em;
+}
+.beta-banner-text strong {
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 10px;
+  margin-right: 6px;
+}
+.beta-banner-copy {
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+#cover { padding-top: 5rem; }
+
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  white-space: nowrap;
+}
+
+/* ── ASSESSMENT ── */
+#assessment { display: none; }
+.assessment-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+.progress-bar-wrap {
+  position: sticky;
+  top: 0;
+  background: var(--cream);
+  padding: 1rem 0 0.8rem;
+  z-index: 10;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3rem;
+}
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+  padding: 0 2rem;
+}
+.progress-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.progress-count {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--navy);
+}
+.progress-track {
+  height: 2px;
+  background: var(--border);
+  margin: 0 2rem;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--midblue);
+  transition: width 0.4s ease;
+}
+
+.axis-block { margin-bottom: 3.5rem; }
+.axis-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+  padding: 1.2rem 1.4rem;
+  background: var(--navy);
+  border-radius: 4px;
+}
+.axis-code {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.axis-step {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.axis-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #fff;
+}
+.axis-hint {
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 1.8rem;
+  padding: 0.6rem 0 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.question-item {
+  margin-bottom: 2.2rem;
+}
+.question-text {
+  font-size: 14.5px;
+  color: var(--text);
+  margin-bottom: 1.1rem;
+  line-height: 1.65;
+  font-weight: 400;
+}
+.question-poles {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  gap: 1rem;
+}
+.question-poles span {
+  max-width: 46%;
+  line-height: 1.4;
+}
+.scale-wrap {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.scale-btn {
+  flex: 1;
+  height: 38px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+  transition: all 0.2s;
+  position: relative;
+}
+.scale-btn:hover { border-color: var(--midblue); color: var(--midblue); }
+.scale-btn.selected {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+.scale-btn.selected-mid {
+  background: var(--midblue);
+  border-color: var(--midblue);
+  color: #fff;
+}
+.scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 4px;
+  letter-spacing: 0.03em;
+}
+
+.nav-row {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+.btn-next {
+  padding: 12px 36px;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s;
+  opacity: 0.4;
+  pointer-events: none;
+}
+.btn-next.ready { opacity: 1; pointer-events: auto; }
+.btn-next:hover.ready { background: var(--midblue); }
+
+/* ── RESULTS ── */
+#results { display: none; }
+.results-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+}
+.results-header {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--navy);
+  margin: -3rem -2rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.results-header::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 300px; height: 300px;
+  border: 1px solid rgba(126,200,227,0.1);
+  border-radius: 50%;
+}
+.results-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.results-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+.results-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+}
+.results-description {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.85;
+  max-width: 560px;
+  margin: 1.2rem auto 0;
+  font-style: italic;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Constellation bars */
+.constellation-list { margin-bottom: 2.5rem; }
+.constellation-item { margin-bottom: 1.1rem; }
+.constellation-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 5px;
+}
+.constellation-name {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--navy);
+}
+.constellation-family {
+  font-size: 11px;
+  color: var(--muted);
+  font-style: italic;
+}
+.constellation-pct {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--midblue);
+  font-weight: 300;
+}
+.bar-track {
+  height: 5px;
+  background: var(--warm);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: var(--midblue);
+  transition: width 1s ease;
+}
+.bar-fill.leading { background: var(--navy); }
+.bar-fill.shadow-bar { background: #c4b5a0; }
+
+/* Axis profile */
+.axis-profile { margin-bottom: 2.5rem; }
+.axis-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 90px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.axis-pole-label {
+  font-size: 11px;
+  color: var(--muted);
+  font-style: italic;
+}
+.axis-pole-label.right { text-align: right; }
+.axis-spectrum {
+  position: relative;
+  height: 6px;
+  background: var(--warm);
+  border-radius: 3px;
+}
+.axis-marker {
+  position: absolute;
+  top: -4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 2px solid var(--cream);
+  transform: translateX(-50%);
+  transition: left 1s ease;
+}
+.axis-code-label {
+  grid-column: 1 / -1;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--midblue);
+  margin-bottom: -6px;
+  font-weight: 500;
+}
+
+/* Family ring */
+.family-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 2.5rem;
+}
+.family-card {
+  padding: 1.1rem 1.2rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.family-card-name {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.family-card-pct {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: var(--navy);
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.family-bar-track {
+  height: 3px;
+  background: var(--warm);
+  border-radius: 1px;
+}
+.family-bar-fill {
+  height: 100%;
+  border-radius: 1px;
+  background: var(--midblue);
+}
+
+/* Shadow section */
+.shadow-card {
+  background: var(--warm);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.4rem 1.5rem;
+  margin-bottom: 1rem;
+}
+.shadow-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.shadow-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.shadow-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Contemplative note */
+.contemplative-card {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 4px;
+  padding: 1.6rem 1.8rem;
+  margin-bottom: 2.5rem;
+}
+.contemplative-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+.contemplative-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.82);
+  font-style: italic;
+}
+
+.btn-restart {
+  display: inline-block;
+  padding: 12px 32px;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  margin-top: 1rem;
+  transition: all 0.2s;
+}
+.footer-brand {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* All personas reference section */
+.all-personas-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--navy);
+}
+.persona-family-block {
+  margin-bottom: 2.5rem;
+}
+.persona-family-header {
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+  background: var(--cream);
+  border-radius: 0 4px 4px 0;
+}
+.persona-family-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+.persona-family-tagline {
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+}
+.persona-ref-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.persona-ref-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1rem 1.1rem;
+}
+.persona-ref-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+.persona-ref-mode {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.persona-ref-desc {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.65;
+}
+@media (max-width: 520px) {
+  .persona-ref-grid { grid-template-columns: 1fr; }
+}
+
+.btn-restart:hover { background: var(--navy); color: #fff; }
+
+  display: inline-block;
+  padding: 12px 32px;
+  border: 1px solid var(--midblue);
+  color: #fff;
+  background: var(--midblue);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  margin-top: 1rem;
+  margin-left: 12px;
+  transition: all 0.2s;
+}
+.btn-pdf:hover { background: var(--navy); border-color: var(--navy); }
+.btn-pdf:disabled { opacity: 0.5; cursor: wait; }
+@media print {
+  .btn-restart, .btn-pdf, .beta-banner, .progress-bar-wrap { display: none !important; }
+}
+
+.disclaimer {
+  font-size: 11px;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  line-height: 1.7;
+}
+.cycle-section {
+  margin: 2.5rem 0;
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+.cycle-heading {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--midblue);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.cycle-subheading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--navy);
+  text-align: center;
+  margin-bottom: 1.8rem;
+  font-style: italic;
+}
+.cycle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 1.6rem;
+}
+.cycle-card {
+  border-radius: 4px;
+  padding: 1rem 0.9rem;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+.cycle-word {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.cycle-desc {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+.cycle-link {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-top: 2px;
+}
+@media (max-width: 580px) {
+  .cycle-grid { grid-template-columns: 1fr 1fr; }
+}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<!-- BETA BANNER -->
+<div class="beta-banner">
+  <div class="beta-banner-text"><strong>Beta</strong> This tool is shared for testing purposes only. Not for public distribution or redistribution.</div>
+  <div class="beta-banner-copy">© 2025 CreActivity · Chloe Tiryaki, ACC</div>
+</div>
+
+<!-- COVER -->
+<div id="cover">
+  <div class="cover-inner">
+    <div class="cover-eyebrow">CreActivity · Chloe Tiryaki, ACC</div>
+    <h1 class="cover-title">Creativity<br><em>Conditions</em><br>Inventory</h1>
+    <p class="cover-subtitle">When do you come alive creatively?</p>
+    <p class="cover-desc" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;font-style:italic;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:1.6rem;">Creativity is not a trait you possess or lack. It is something that becomes possible — within you, through you — when the conditions of your life make room for it.</p>
+    <p class="cover-desc" style="font-size:13px;margin-bottom:2rem;">This is not a personality test. It is a practice-based, theoretically grounded instrument — designed to surface the specific conditions under which your creativity activates.</p>
+    <div class="cover-meta">
+      <div class="meta-item">
+        <span class="meta-num">16</span>
+        <span class="meta-label">Questions</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-num">~8</span>
+        <span class="meta-label">Minutes</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-num">16</span>
+        <span class="meta-label">Creative personas</span>
+      </div>
+    </div>
+    <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1.8rem;">Play · Reflect · Grow · Repeat</div>
+    <button class="btn-start" onclick="startAssessment()">Begin</button>
+  </div>
+</div>
+
+<!-- ASSESSMENT -->
+<div id="assessment">
+  <div class="progress-bar-wrap">
+    <div class="progress-top">
+      <span class="progress-label">Creativity Conditions Inventory</span>
+      <span class="progress-count" id="progress-count">1 of 16</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill" style="width:6.25%"></div>
+    </div>
+  </div>
+  <div class="assessment-wrap" id="questions-container"></div>
+</div>
+
+</div>
+
+<!-- NAME PROMPT -->
+<div id="name-prompt" style="display:none;">
+  <div class="assessment-wrap" style="max-width:520px;padding-top:5rem;text-align:center;">
+    <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--midblue);margin-bottom:1.2rem;">Almost there</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--navy);margin-bottom:0.6rem;">What shall we call you?</h2>
+    <p style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:2.4rem;line-height:1.7;">Your results belong to you — putting your name on them makes that real.<br>You can skip this if you prefer.</p>
+    <input type="text" id="user-name-input" placeholder="Your name" maxlength="60"
+      style="width:100%;max-width:320px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:15px;border:1px solid var(--border);background:#fff;color:var(--text);border-radius:2px;text-align:center;display:block;margin:0 auto 1.6rem;"
+      onkeydown="if(event.key==='Enter') confirmName()">
+    <div style="display:flex;gap:10px;justify-content:center;">
+      <button class="btn-next ready" onclick="confirmName()" style="padding:12px 36px;">See my results →</button>
+    </div>
+    <button onclick="confirmName()" style="background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;margin-top:1rem;font-family:'DM Sans',sans-serif;text-decoration:underline;text-underline-offset:3px;">Skip — show results without name</button>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div id="results">
+  <div class="results-wrap">
+    <div class="results-header">
+      <div class="results-eyebrow" id="results-eyebrow">Your creative ecology</div>
+      <h2 class="results-name" id="results-leading-name">—</h2>
+      <p class="results-tagline" id="results-leading-family">—</p>
+      <p class="results-description" id="results-leading-description"></p>
+    </div>
+
+    <div style="padding:1.6rem 2rem;border-bottom:1px solid var(--border);margin-bottom:2rem;text-align:center;">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;font-style:italic;color:var(--navy);line-height:1.8;max-width:540px;margin:0 auto;">Whether your creativity is quiet or loud, solitary or collaborative, now or not yet — it is yours. The question has never been whether. It has always been under what conditions.</p>
+    </div>
+
+    <div style="margin-bottom:2.5rem;">
+      <div class="section-title">Active personas — your creative ecology</div>
+      <div class="constellation-list" id="persona-bars"></div>
+    </div>
+
+    <div class="axis-profile" id="axis-profile-section">
+      <div class="section-title">Axis polarity profile</div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:1.4rem;line-height:1.7;">These four positions show the conditions that most activate your creativity across value, time, motivation, and mode. They are not fixed traits. They describe where your creativity is most alive right now, and what your current creative ecology actually needs.</p>
+      <div id="axis-rows"></div>
+    </div>
+
+    <div class="contemplative-card">
+      <div class="contemplative-label">The Return to Awareness</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.45);font-style:italic;margin-bottom:1rem;letter-spacing:0.03em;">Awareness is the center from which all creative conditions become legible. Before push or pull, before ignition or emergence, there is the capacity to notice. This is your integrative layer.</div>
+      <div class="contemplative-text" id="contemplative-text">—</div>
+    </div>
+
+    <div style="margin-bottom:2.5rem;">
+      <div class="section-title">Family distribution</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:0.8rem;font-style:italic;line-height:1.7;">The 16 personas are organised into four creative families, each representing a distinct orientation toward creative work. Your distribution shows how your resonance is weighted across these domains.</p>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:1.4rem;line-height:1.7;">A highly concentrated distribution means your creativity is most alive in specific conditions and may feel constrained in others. An even distribution suggests you move between creative modes fluidly, which is a strength in itself. Neither is better. Both are data.</p>
+      <div class="family-grid" id="family-grid"></div>
+    </div>
+
+    <div style="margin-bottom:2.5rem;">
+      <div class="section-title">Shadow archetypes</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:0.8rem;font-style:italic;line-height:1.7;">The creative energies furthest from your current profile. Not what you lack, but what requires fundamentally different conditions to activate. Shadow is relational, not fixed: a persona may appear as a shadow for several different profiles because its axis signature sits at the furthest point from each of theirs, for different reasons.</p>
+      <p style="font-size:13px;color:var(--navy);margin-bottom:1.4rem;font-family:'Cormorant Garamond',serif;font-style:italic;line-height:1.7;font-size:1rem;">Most of us were taught that certain ways of creating belong to someone else. This is not a truth. It is a condition. And conditions can change.</p>
+      <div id="shadow-cards"></div>
+    </div>
+
+    <!-- PLAY · REFLECT · GROW · REPEAT CYCLE -->
+    <div class="cycle-section">
+      <div class="cycle-heading">What comes next</div>
+      <p class="cycle-subheading">Your results are the beginning, not the end.</p>
+      <div class="cycle-grid">
+
+        <div class="cycle-card" style="border-color:#1D9E75;background:#E1F5EE08;">
+          <div class="cycle-word" style="color:#1D9E75;">Play</div>
+          <div class="cycle-desc">You just explored your creative conditions without pressure or judgement. This is where every cycle begins.</div>
+          <a class="cycle-link" style="background:#E1F5EE;color:#0F6E56;cursor:pointer;" onclick="restart()">Begin again →</a>
+        </div>
+
+        <div class="cycle-card" style="border-color:#185FA5;background:#E6F1FB08;">
+          <div class="cycle-word" style="color:#185FA5;">Reflect</div>
+          <div class="cycle-desc">Sit with what emerged. Your results are a mirror. If you want to go deeper, bring them to a coaching conversation.</div>
+          <a class="cycle-link" style="background:#E6F1FB;color:#185FA5;" href="https://www.creactivity.ca" target="_blank">1:1 Creativity Coaching</a>
+        </div>
+
+        <div class="cycle-card" style="border-color:#534AB7;background:#EEEDFE08;">
+          <div class="cycle-word" style="color:#534AB7;">Grow</div>
+          <div class="cycle-desc">Learn to use the CPM and CCI with your own clients and communities. Become a certified creativity coach.</div>
+          <a class="cycle-link" style="background:#EEEDFE;color:#534AB7;" href="https://www.creactivity.ca" target="_blank">Creativity Coaching Mastery</a>
+        </div>
+
+        <div class="cycle-card" style="border-color:#854F0B;background:#FAEEDA08;">
+          <div class="cycle-word" style="color:#854F0B;">Repeat</div>
+          <div class="cycle-desc">Conditions change. Seasons change. You change. Return to the CCI periodically. Your creative ecology will shift with you.</div>
+          <a class="cycle-link" style="background:#FAEEDA;color:#854F0B;cursor:pointer;" onclick="restart()">Begin again →</a>
+        </div>
+
+      </div>
+      <p style="text-align:center;font-size:11px;color:var(--muted);font-style:italic;letter-spacing:0.06em;">Play · Reflect · Grow · Repeat</p>
+    </div>
+
+    <div style="text-align:center;margin-bottom:2rem;">
+      <button class="btn-restart" onclick="restart()">Take again</button>
+      <button class="btn-pdf" id="btn-pdf" onclick="downloadPDF()">Download results as PDF</button>
+    </div>
+
+    <!-- ALL 16 PERSONAS REFERENCE -->
+    <div class="all-personas-section">
+      <div class="section-title">The 16 creative personas</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:0.6rem;line-height:1.75;">The Creativity Persona Map describes 16 creative energies organised into four families. These are not fixed types or personality labels. They are conditions: orientations that become available when the right circumstances are present.</p>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:2rem;line-height:1.75;">Understanding all 16 helps you see not just where your creativity is most alive right now, but what the full ecology looks like. Your lesser-resonant personas are not absent from you. They are waiting for different conditions.</p>
+
+      <div class="persona-family-block">
+        <div class="persona-family-header" style="border-left:4px solid #1D9E75;">
+          <div class="persona-family-name" style="color:#1D9E75;">Exploration &amp; Vision</div>
+          <div class="persona-family-tagline">Before form, before structure. Where creativity first stirs.</div>
+        </div>
+        <div class="persona-ref-grid">
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Dreamer</div>
+            <div class="persona-ref-mode">Imagining · Opening</div>
+            <div class="persona-ref-desc">Holds open imaginative space before direction or form appears. Possibility itself becomes the practice. The Dreamer does not move or decide; it resists closure. This is not about finding something. It is about allowing what is not yet formed to exist.</div>
+          </div>
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Explorer</div>
+            <div class="persona-ref-mode">Moving · Discovering</div>
+            <div class="persona-ref-desc">Moves into the unknown guided by curiosity, without needing a clear destination. Expands the field through contact with the unfamiliar. The Explorer is already in motion, drawn forward by genuine curiosity rather than a predetermined route.</div>
+          </div>
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Visionary</div>
+            <div class="persona-ref-mode">Seeing · Orienting</div>
+            <div class="persona-ref-desc">Senses and articulates what could exist, orienting self and others toward a future not yet realised. Provides direction and coherence to emerging possibility. Where the Dreamer opens and the Explorer wanders, the Visionary aligns.</div>
+          </div>
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Improviser</div>
+            <div class="persona-ref-mode">Responding · Adapting</div>
+            <div class="persona-ref-desc">Generates in real time, responding to what is unfolding in the present moment. Keeps creativity alive and moving through immediate responsiveness. The Improviser works with what is here, now: situational, alive, and unscripted.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="persona-family-block">
+        <div class="persona-family-header" style="border-left:4px solid #185FA5;">
+          <div class="persona-family-name" style="color:#185FA5;">Structure &amp; Cultivation</div>
+          <div class="persona-family-tagline">Where creativity takes form, holds, and grows over time.</div>
+        </div>
+        <div class="persona-ref-grid">
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Architect</div>
+            <div class="persona-ref-mode">Designing · Structuring</div>
+            <div class="persona-ref-desc">Designs structures and systems that can hold and sustain creative work. Creates the frameworks within which creativity can exist and endure. The Architect does not produce the work itself; it makes the work possible.</div>
+          </div>
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Gardener</div>
+            <div class="persona-ref-mode">Nurturing · Tending</div>
+            <div class="persona-ref-desc">Tends conditions patiently so growth can unfold in its own time. Supports gradual, organic development. Unlike the Architect, the Gardener does not control structure; it works with conditions. Growth is not forced, but allowed.</div>
+          </div>
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Cartographer</div>
+            <div class="persona-ref-mode">Mapping · Clarifying</div>
+            <div class="persona-ref-desc">Maps complexity so that others can navigate through it. Makes the invisible terrain visible and navigable. The Cartographer does not build or grow; it reveals. It turns confusion into orientation.</div>
+          </div>
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Maker</div>
+            <div class="persona-ref-mode">Building · Crafting</div>
+            <div class="persona-ref-desc">Brings ideas into tangible form through craft and skilled execution. Translates ideas into physical or concrete reality. The Maker completes. The process and the product are inseparable; making is itself the creative act.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="persona-family-block">
+        <div class="persona-family-header" style="border-left:4px solid #534AB7;">
+          <div class="persona-family-name" style="color:#534AB7;">Connection &amp; Meaning</div>
+          <div class="persona-family-tagline">Where creativity becomes relational, shared, and meaningful.</div>
+        </div>
+        <div class="persona-ref-grid">
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Weaver</div>
+            <div class="persona-ref-mode">Connecting · Integrating</div>
+            <div class="persona-ref-desc">Finds and holds the threads between people, ideas, and elements, creating coherence across them. Brings parts into meaningful relationship. The Weaver connects what already exists, holding the pattern through slow, sustained presence.</div>
+          </div>
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Translator</div>
+            <div class="persona-ref-mode">Bridging · Converting</div>
+            <div class="persona-ref-desc">Moves between worlds, making what is unfamiliar accessible across contexts. Enables understanding across differences. The Translator works at boundaries, adapting meaning so it can travel between disciplines, communities, and ways of knowing.</div>
+          </div>
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Storyteller</div>
+            <div class="persona-ref-mode">Shaping · Narrating</div>
+            <div class="persona-ref-desc">Shapes raw experience into narrative, creating meaning through structure and expression. Organises experience into something that can be understood and shared. The Storyteller gives form to meaning through time and language.</div>
+          </div>
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Witness</div>
+            <div class="persona-ref-mode">Attending · Observing</div>
+            <div class="persona-ref-desc">Holds grounded presence, allowing what is to be seen clearly without interference. Creates space for clarity through awareness. The Witness does not change, interpret, or respond. It simply sees. Deep looking is itself a form of creative contribution.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="persona-family-block">
+        <div class="persona-family-header" style="border-left:4px solid #854F0B;">
+          <div class="persona-family-name" style="color:#854F0B;">Activation &amp; Transformation</div>
+          <div class="persona-family-tagline">Where movement, depth, and change occur.</div>
+        </div>
+        <div class="persona-ref-grid">
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Catalyst</div>
+            <div class="persona-ref-mode">Activating · Initiating</div>
+            <div class="persona-ref-desc">Ignites movement and initiates change, shifting energy into action. Breaks inertia and sets processes in motion. The Catalyst starts movement but does not necessarily shape what follows. It sparks; it does not transform.</div>
+          </div>
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Alchemist</div>
+            <div class="persona-ref-mode">Transforming · Integrating</div>
+            <div class="persona-ref-desc">Transforms tension, contradiction, and raw experience into new form and meaning. Converts what is unresolved into something generative. The Alchemist works with what already exists, changing the nature of the material itself.</div>
+          </div>
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Seeker</div>
+            <div class="persona-ref-mode">Questioning · Inquiring</div>
+            <div class="persona-ref-desc">Pursues depth and truth through ongoing inner inquiry. Drives movement toward understanding and meaning. The Seeker is guided by a question. Unlike the Explorer, this is an inward journey toward truth rather than outward discovery.</div>
+          </div>
+          <div class="persona-ref-card">
+            <div class="persona-ref-name">Listener</div>
+            <div class="persona-ref-mode">Receiving · Attuning</div>
+            <div class="persona-ref-desc">Receives deeply and allows what is heard to shape what emerges next. Enables emergence through deep listening. The Listener is not passive; it is responsive. What is received informs what comes next. Listening is the creative act itself.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="disclaimer">
+      <strong style="display:block;margin-bottom:6px;font-style:normal;letter-spacing:0.05em;font-size:10px;text-transform:uppercase;">Beta Testing Version — Not for Public Distribution</strong>
+      The CCI is a practice-based, theoretically grounded instrument rooted in the Creativity Persona Map (CPM) framework.<br>
+      It reflects relative patterns in your responses, not fixed traits or clinical measures.<br>
+      As a resonance mapping tool rather than a validated psychometric test, results are most useful as a starting point for reflection, self-inquiry, and coaching conversation.<br><br>
+      This tool and its underlying framework are the intellectual property of Chloe Tiryaki, ACC / CreActivity.<br>
+      Sharing, reproducing, or adapting this instrument without written permission is not permitted.<br>
+      For feedback or questions: <a href="mailto:chloe@creactivity.ca" style="color:var(--blue);text-decoration:none;">chloe@creactivity.ca</a>
+    </div>
+    <div class="footer-brand">© 2025 CreActivity · Chloe Tiryaki, ACC · creactivity.ca · All rights reserved</div>
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [
+  {
+    axis: 'A01', axisName: 'Value orientation', axisHint: 'What draws you toward creative work?',
+    items: [
+      { q: 'When I do my most alive creative work, the outcome feels...', poleL: 'Wide open — anything could emerge', poleR: 'Purposeful — solving something real' },
+      { q: 'The creative situations that energize me most are...', poleL: 'Uncharted — no map, no rules', poleR: 'Grounded — a real problem to work with' },
+      { q: 'Constraints in my creative process tend to...', poleL: 'Flatten things — I need freedom to breathe', poleR: 'Sharpen things — limits help me focus' },
+      { q: 'I feel most creatively alive when the work is...', poleL: 'Exploratory — the outcome is open and unknown', poleR: 'Consequential — it will genuinely matter to someone' },
+    ]
+  },
+  {
+    axis: 'A02', axisName: 'Temporal orientation', axisHint: 'How do you inhabit time when you create?',
+    items: [
+      { q: 'My creative rhythm feels most natural when...', poleL: 'Time is spacious and ecological — unhurried', poleR: 'Time is tight — urgency carries me forward' },
+      { q: 'I reach my most generative creative states through...', poleL: 'Long, uninterrupted immersion — time that opens', poleR: 'Short bursts with momentum — time that presses' },
+      { q: 'Deadlines and time pressure in creative work...', poleL: 'Collapse the space I need — I need room to arrive', poleR: 'Focus me — I often do my best work close to the edge' },
+      { q: 'When I am truly in creative flow, time feels...', poleL: 'Dissolved — I lose track entirely, I am just here', poleR: 'Charged — every moment has weight and direction' },
+    ]
+  },
+  {
+    axis: 'A03', axisName: 'Motivational orientation', axisHint: 'Where does your creative impulse begin — and how does it move?',
+    items: [
+      { q: 'My creativity is most often ignited by...', poleL: 'Already alive in me — the pull is there before I begin', poleR: 'Alive through the work — I begin and the pull arrives' },
+      { q: 'Before starting a creative project, I typically feel...', poleL: 'Already moved — the impulse precedes the first step', poleR: 'Uncertain until I begin — engagement is what ignites me' },
+      { q: 'My most alive creative experiences are ones where...', poleL: 'I knew from the start that I needed to make this', poleR: 'I discovered why it mattered by doing it' },
+      { q: 'The relationship between motivation and making in my creative life is...', poleL: 'Motivation leads — I follow the pull that was already there', poleR: 'Making leads — the process generates its own momentum' },
+    ]
+  },
+  {
+    axis: 'A04', axisName: 'Mode of engagement', axisHint: 'How does your body and mind enter the creative process?',
+    items: [
+      { q: 'I enter creativity most naturally through...', poleL: 'Thinking — concepts, frameworks, ideas first', poleR: 'Making — doing, building, moving first' },
+      { q: 'My best creative thinking happens when...', poleL: 'I am still — reading, reflecting, planning', poleR: 'I am in motion — walking, sketching, building' },
+      { q: 'The physical environment that most supports my creative work is...', poleL: 'Clear and still — space to think without noise or distraction', poleR: 'Rich and sensory — surrounded by materials, texture, and things to use' },
+      { q: 'When I hit a creative block, what helps most is...', poleL: 'Stepping back to think differently', poleR: 'Starting to make something — anything — with my hands' },
+    ]
+  }
+];
+
+// Persona axis signatures: [A01, A02, A03, A04] each -2 to +2
+// Negative = left pole, Positive = right pole, 0 = center
+// Primary/secondary axis assigned by defining quality, not numeric equality
+// Tie-breaking rule: when axes are numerically tied, primary is the axis most central to the persona's defining quality
+const PERSONAS = [
+  { name: 'Dreamer', family: 'Exploration & Vision', sig: [-2,-2,-1,0], shadow: 'Maker',
+    primary: 'A01', secondary: 'A02',
+    axisRole: { A01: 'openness', A02: 'container' },
+    contribution: 'holds the space of possibility before anything is made',
+    bar: 'Holds open imaginative space before direction or form appears. Your creativity activates when there is genuine room to imagine without pressure to produce or decide.',
+    description: 'The Dreamer is the keeper of what could be. Your creativity activates in conditions of genuine openness, when there is room to imagine without pressure to produce. You do not need a problem to solve or a deadline to meet. You need spacious, unhurried time in which ideas can surface on their own terms. The Dreamer energy is not passive; it is the most patient form of creative engagement, trusting that something worth making will emerge from the space of not-yet-knowing.' },
+
+  { name: 'Explorer', family: 'Exploration & Vision', sig: [-2,0,-1,1], shadow: 'Cartographer',
+    primary: 'A01', secondary: 'A04',
+    axisRole: { A01: 'novelty', A04: 'entry point' },
+    contribution: 'moves into unknown territory driven by curiosity',
+    bar: 'Moves into the unknown guided by curiosity, without needing a clear destination. Your creativity grows through genuine contact with what you do not yet know.',
+    description: 'The Explorer is driven by a need to discover. Your creativity activates when you are moving into territory that has no map yet, when the question is more alive than the answer. You tend to enter through doing and sensing, following threads of genuine curiosity rather than planning a route in advance. The Explorer energy thrives when there is room to wander with purpose, and when the environment rewards noticing rather than arriving.' },
+
+  { name: 'Visionary', family: 'Exploration & Vision', sig: [-2,0,2,-2], shadow: 'Gardener',
+    primary: 'A01', secondary: 'A03',
+    axisRole: { A01: 'direction', A03: 'calling' },
+    contribution: 'sees what could exist and orients others toward it',
+    bar: 'Senses and articulates what could exist, orienting self and others toward a future not yet realised. Your creativity is called forth by a sense that something needs to exist in the world.',
+    description: 'The Visionary holds a picture of what could exist and feels pulled to bring it into being. Your creativity is called forth; there is something larger than personal curiosity at work, a sense that this future needs to exist in the world. You think in concepts and frameworks, and you are at your most alive when translating an inner vision into a direction others can follow. The Visionary energy is most powerful when it finds the right conditions: a calling worth answering, and space for the kind of conceptual thinking that precedes form.' },
+
+  { name: 'Improviser', family: 'Exploration & Vision', sig: [-2,2,0,1], shadow: 'Architect',
+    primary: 'A01', secondary: 'A02',
+    axisRole: { A01: 'freedom', A02: 'accelerator' },
+    contribution: 'generates in the moment, responsive and adaptive',
+    bar: 'Generates in real time, responding to what is unfolding in the present moment. Your creativity is most alive when the environment is dynamic and responsiveness matters more than preparation.',
+    description: 'The Improviser comes alive in live conditions. Your creativity is spontaneous and responsive. You do not need a plan, you need a stage. Urgency and momentum are your fuel; you think best on your feet and create best when something is happening that requires a real-time response. The Improviser energy activates when the environment is dynamic, when there is permission to move without a fixed script, and when responsiveness is valued as much as preparation.' },
+
+  { name: 'Architect', family: 'Structure & Cultivation', sig: [2,-1,1,-2], shadow: 'Improviser',
+    primary: 'A01', secondary: 'A04',
+    axisRole: { A01: 'purpose', A04: 'structure' },
+    contribution: 'builds rigorous systems that hold creative vision',
+    bar: 'Designs structures and systems that can hold and sustain creative work. Your creativity activates when there is a real problem to solve and space to think it through with care.',
+    description: 'The Architect creates by designing systems. Your creativity activates when there is a real problem to solve and the time and space to think it through carefully. You bring conceptual rigor to creative work; you see how the parts fit together, and you build frameworks that can hold complexity without collapsing. The Architect energy is at its best when the work calls for deep thinking, purposeful design, and the satisfaction of seeing a well-made structure serve its purpose over time.' },
+
+  { name: 'Gardener', family: 'Structure & Cultivation', sig: [1,-2,-1,1], shadow: 'Visionary',
+    primary: 'A02', secondary: 'A01',
+    axisRole: { A02: 'pace', A01: 'orientation' },
+    contribution: 'tends conditions patiently so things can grow',
+    bar: 'Tends conditions patiently so growth can unfold in its own time. Your creativity activates through sustained attention to what is already alive and needs the right environment to develop.',
+    description: 'The Gardener creates by cultivating. Your creativity activates through sustained, patient attention to what is already alive and needs the right conditions to develop. You are drawn to work that unfolds slowly and rewards care over time. The Gardener energy is not flashy, but it is deeply generative; it knows that the best creative outcomes are not forced into existence but grown. You are most alive when you are tending something with both skill and genuine attentiveness.' },
+
+  { name: 'Cartographer', family: 'Structure & Cultivation', sig: [1,-2,1,-2], shadow: 'Explorer',
+    primary: 'A02', secondary: 'A04',
+    axisRole: { A02: 'depth', A04: 'instrument' },
+    contribution: 'maps the terrain so others can navigate',
+    bar: 'Maps complexity so that others can navigate through it. Your creativity activates when there is a territory that needs to be made legible for those who would otherwise be lost in it.',
+    description: 'The Cartographer creates by bringing clarity. Your creativity activates when there is a complex territory that needs to be made legible: a system, a process, a field of knowledge that others struggle to navigate. You think conceptually and work deliberately, bringing order to what is scattered. The Cartographer energy is most powerful when the work calls for deep understanding, careful analysis, and the translation of complexity into something others can actually use.' },
+
+  { name: 'Maker', family: 'Structure & Cultivation', sig: [2,1,1,2], shadow: 'Dreamer',
+    primary: 'A04', secondary: 'A01',
+    axisRole: { A04: 'expression', A01: 'intention' },
+    contribution: 'brings form into the world through skilled making',
+    bar: 'Brings ideas into tangible form through craft and skilled execution. Your creativity activates when your hands are involved and the work moves toward a real, concrete outcome.',
+    description: 'The Maker creates through skilled doing. Your creativity activates when your hands are involved and the work has a real, tangible outcome. You are drawn to materials, craft, and the intelligence that lives in the act of making itself. The Maker energy thrives in conditions that support embodied engagement: a workspace with the right tools, purposeful problems, and the satisfaction of seeing something come into existence through your direct effort. For the Maker, the process and the product are inseparable.' },
+
+  { name: 'Weaver', family: 'Connection & Meaning', sig: [0,-2,0,1], shadow: 'Catalyst',
+    primary: 'A02', secondary: 'A04',
+    axisRole: { A02: 'spaciousness', A04: 'contact' },
+    contribution: 'finds and holds the threads between people and ideas through slow, sustained presence',
+    bar: 'Finds and holds the threads between people, ideas, and elements, creating coherence across them. Your creativity activates when there is time and relational space to sense what belongs together.',
+    description: 'The Weaver creates by integrating. Your creativity activates in slow, relational conditions, when there is time to sense the connections between people, ideas, and experiences that others might not notice. You bring things together that belong together. The Weaver energy does not rush; it requires spacious time and genuine openness to what is present. It is most alive in contexts where relationships matter, where meaning emerges gradually, and where the creative act is one of synthesis and active connecting.' },
+
+  { name: 'Translator', family: 'Connection & Meaning', sig: [1,1,1,0], shadow: 'Seeker',
+    primary: 'A01', secondary: 'A03',
+    axisRole: { A01: 'purpose', A03: 'movement' },
+    contribution: 'moves between worlds with purpose, making the foreign accessible through active, intentional connection',
+    bar: 'Moves between worlds, making what is unfamiliar accessible across contexts. Your creativity activates at the boundary between different languages, disciplines, or ways of knowing.',
+    description: 'The Translator creates by crossing boundaries. Your creativity activates when there is a gap between worlds: different languages, disciplines, communities, or perspectives, and someone needs to bridge it. You move between contexts with purpose, finding the analogies, framings, and connections that make the unfamiliar legible. The Translator energy thrives in conditions of difference and contact, where your capacity to hold multiple perspectives simultaneously becomes a genuine creative asset.' },
+
+  { name: 'Storyteller', family: 'Connection & Meaning', sig: [-1,0,2,-1], shadow: 'Maker',
+    primary: 'A03', secondary: 'A01',
+    axisRole: { A03: 'calling', A01: 'frame' },
+    contribution: 'shapes experience into meaning through narrative',
+    bar: 'Shapes raw experience into narrative, creating meaning through structure and expression. Your creativity is called forth by a deep sense that something needs to be said, and said well.',
+    description: 'The Storyteller creates by giving form to what has been lived. Your creativity is called forth by a deep sense that certain experiences, insights, or truths need to be articulated; that something must be said, and said well. You think through language, symbol, and structure, and you are most alive when the work asks you to find the through-line that makes scattered experience coherent. The Storyteller energy activates when there is something genuinely worth saying and an audience capable of receiving it.' },
+
+  { name: 'Witness', family: 'Connection & Meaning', sig: [0,-2,-2,0], shadow: 'Catalyst',
+    primary: 'A02', secondary: 'A03',
+    axisRole: { A02: 'stillness', A03: 'receptivity' },
+    contribution: 'holds deep presence and attention for what is',
+    bar: 'Holds grounded presence, allowing what is to be seen clearly without interference. Your creativity activates through the quality of your attention before any action or response.',
+    description: 'The Witness creates through the quality of its attention. Your creativity activates in conditions of genuine stillness, when there is time to truly see before acting, to be fully present with what is rather than rushing toward what should be. The Witness energy is the most contemplative in the CPM: it trusts that deep looking is itself a form of creative contribution, and that what you notice changes what becomes possible. It is most alive in slow, spacious conditions that honour presence as a practice.' },
+
+  { name: 'Catalyst', family: 'Activation & Transformation', sig: [-1,2,2,1], shadow: 'Witness',
+    primary: 'A02', secondary: 'A03',
+    axisRole: { A02: 'urgency', A03: 'ignition' },
+    contribution: 'ignites movement and transformation in others',
+    bar: 'Ignites movement and initiates change, shifting energy into action. Your creativity activates when something needs to shift and you have the role of setting it in motion.',
+    description: 'The Catalyst creates by activating others. Your creativity is deeply relational and urgent; you come alive when something needs to shift and you have the role of sparking it. You are drawn to conditions of momentum, contact, and necessary change. The Catalyst energy does not need to make the thing itself; it makes the conditions in which others can. It thrives under pressure, in the presence of real stakes, and in environments where your capacity to ignite engagement is recognised and given room.' },
+
+  { name: 'Alchemist', family: 'Activation & Transformation', sig: [-1,0,2,0], shadow: 'Cartographer',
+    primary: 'A03', secondary: 'A01',
+    axisRole: { A03: 'transformation', A01: 'material' },
+    contribution: 'transforms raw material: experience, tension, and chaos into meaning and new form',
+    bar: 'Transforms tension, contradiction, and raw experience into new form and meaning. Your creativity activates in the presence of what is difficult, unresolved, or in flux.',
+    description: 'The Alchemist creates by transforming. Your creativity is called forth by what is difficult, unresolved, or in flux; you are drawn to the material that others find overwhelming and you find ways to make it generative. The Alchemist energy does not require ideal conditions; it often works best in conditions of tension, uncertainty, or creative pressure. It is most alive when there is a real calling to make something meaningful from what initially resists meaning.' },
+
+  { name: 'Seeker', family: 'Activation & Transformation', sig: [-2,0,-2,-1], shadow: 'Translator',
+    primary: 'A01', secondary: 'A03',
+    axisRole: { A01: 'depth', A03: 'direction' },
+    contribution: 'pursues depth and truth driven by intrinsic questioning',
+    bar: 'Pursues depth and truth through ongoing inner inquiry. Your creativity activates when you have genuine freedom to follow your own questions without external pressure shaping the direction.',
+    description: 'The Seeker creates through the pursuit of understanding. Your creativity is self-directed and driven by an intrinsic need to go deeper: to question, to investigate, to find what lies beneath the surface. You are most alive when the conditions give you genuine freedom to follow your own inquiries without external demand shaping the direction. The Seeker energy is not easily activated by urgency or external purpose; it needs the kind of protected space in which private, sustained inquiry is possible and valued.' },
+
+  { name: 'Listener', family: 'Activation & Transformation', sig: [0,-2,-1,0], shadow: 'Improviser',
+    primary: 'A02', secondary: 'A03',
+    axisRole: { A02: 'spaciousness', A03: 'attunement' },
+    contribution: 'activates through deep receptive presence, creativity as attuned open listening before any response',
+    bar: 'Receives deeply and allows what is heard to shape what emerges next. Your creativity activates when there is unhurried space to be fully attuned before responding.',
+    description: 'The Listener creates by receiving before offering. Your creativity activates in conditions of genuine receptivity, when there is time to be fully attuned before responding, to let what is present land before shaping a reply. The Listener energy is one of the most centered in the CPM: it is drawn to spaciousness, stillness, and the contemplative conditions that make deep attunement possible. It is most alive when the environment honours the act of listening as a creative practice in itself, not merely preparation for something else.' },
+];
+
+const FAMILY_COLORS = {
+  'Exploration & Vision': '#1D9E75',
+  'Structure & Cultivation': '#185FA5',
+  'Connection & Meaning': '#534AB7',
+  'Activation & Transformation': '#854F0B',
+};
+
+const AXIS_INFO = [
+  { code: 'A01', name: 'Value', poleL: 'Novelty & openness', poleR: 'Usefulness & purpose' },
+  { code: 'A02', name: 'Time', poleL: 'Spacious & ecological', poleR: 'Sprint & urgency' },
+  { code: 'A03', name: 'Motivation', poleL: 'Ignited — pull from within', poleR: 'Emergent — drawn through process' },
+  { code: 'A04', name: 'Mode', poleL: 'Thinking & concept', poleR: 'Making & embodied' },
+];
+
+const AWARENESS_TEXTS = {
+  A01_novelty: 'Your creative conditions lean strongly toward novelty and open exploration. Practices that protect undirected time are your essential conditions: white space in your schedule, beginning without knowing where you are going. The invitation: resist the pressure to justify creative time by its outputs. The work does not need to prove itself before it begins.',
+  A01_usefulness: 'Your creative energy activates most fully when anchored in real problems and genuine purpose. Practices of deep listening: to the work itself, to what is actually needed, to the person it will serve. These sustain your creative drive. The invitation: let the problem be the teacher. What is needed will reveal itself when you stay in relationship with the work.',
+  A02_spacious: 'You create best in spacious, ecological time: unhurried, immersive, with room to arrive. Protecting long uninterrupted stretches and resisting the fragmentation of your attention are your essential conditions. The invitation: name this as a genuine creative need, not a preference to be apologised for. Your best work cannot be rushed into existence.',
+  A02_sprint: 'You come alive creatively under pressure and momentum. Sprint conditions, deadlines, and charged bursts of focused energy are your natural creative habitat. The invitation: design your projects with intentional sprints and clear edges. Your creativity needs a container that creates urgency, not openness.',
+  A03_ignited: 'Your creativity is ignited. You need the pull from within to be present before you begin. Practices that keep your inner creative signal alive: journaling, solitude, contemplative walks, unscheduled time. These are not luxuries for you. They are fuel. The invitation: protect the conditions that let the inner pull be heard before the world asks anything of you.',
+  A03_emergent: 'Your creativity is emergent. It builds momentum through the act of making itself. The process is the source of your pull, not its prerequisite. The invitation: trust beginning without feeling moved. The ignition is inside the work, waiting for you to start. You do not need to arrive inspired. You need to arrive.',
+  A04_thinking: 'You enter creativity through thinking and concept: planning, mapping, holding ideas in mind before anything is made. Practices that honour this: time to read, to sketch ideas on paper, to let frameworks form before acting. The invitation: your thinking is itself a creative act. Do not rush past it toward making before the architecture is clear.',
+  A04_making: 'You enter creativity through embodied making and movement. Physical conditions matter enormously for you: the studio, the materials, the texture of the space, the movement of your hands. The invitation: design your environment as a creative partner, not a backdrop. The body knows things the mind has not yet articulated.',
+  centered: 'Your profile sits near the contemplative center across all four axes. You move between creative modes with unusual fluidity. This is itself a form of creative capacity: the ability to shift orientations as conditions call for them. Practices that return you to presence: journaling without agenda, slow observation, silence, time in nature. These are your natural anchors. The invitation: notice which mode is calling right now, rather than reaching for all modes at once.',
+};
+
+let answers = {};
+let currentAxis = 0;
+let userName = '';
+
+function startAssessment() {
+  document.getElementById('cover').style.display = 'none';
+  document.getElementById('assessment').style.display = 'block';
+  renderAxis(0);
+}
+
+function renderAxis(axisIdx) {
+  currentAxis = axisIdx;
+  const axis = QUESTIONS[axisIdx];
+  const container = document.getElementById('questions-container');
+  
+  const answeredBefore = axis.items.map((_, i) => answers[`${axisIdx}_${i}`]);
+  
+  let html = `<div class="axis-block">
+    <div class="axis-header">
+      <span class="axis-code">${axis.axis}</span>
+      <span class="axis-name">${axis.axisName}</span>
+      <span class="axis-step">${axisIdx + 1} of 4</span>
+    </div>
+    <p class="axis-hint">${axis.axisHint}</p>`;
+
+  axis.items.forEach((item, i) => {
+    const qKey = `${axisIdx}_${i}`;
+    const selected = answers[qKey];
+    html += `<div class="question-item" id="qi_${axisIdx}_${i}">
+      <div class="question-text">${item.q}</div>
+      <div class="question-poles">
+        <span>${item.poleL}</span>
+        <span>${item.poleR}</span>
+      </div>
+      <div class="scale-wrap">`;
+    for (let v = 1; v <= 5; v++) {
+      const isSel = selected === v;
+      const isMid = v === 3;
+      const cls = isSel ? (isMid ? 'scale-btn selected-mid' : 'scale-btn selected') : 'scale-btn';
+      html += `<button class="${cls}" onclick="selectAnswer(${axisIdx},${i},${v})">${v}</button>`;
+    }
+    html += `</div>
+      <div class="scale-labels"><span>← ${item.poleL.split(' — ')[0].substring(0,28)}</span><span>center</span><span>${item.poleR.split(' — ')[0].substring(0,28)} →</span></div>
+    </div>`;
+  });
+
+  html += `<div class="nav-row">
+    <button class="btn-next" id="btn-next-${axisIdx}" onclick="nextAxis(${axisIdx})">
+      ${axisIdx < 3 ? 'Continue →' : 'See my results →'}
+    </button>
+  </div></div>`;
+
+  container.innerHTML = html;
+  container.scrollTop = 0;
+  window.scrollTo(0, 0);
+  checkAxisComplete(axisIdx);
+}
+
+function selectAnswer(axisIdx, itemIdx, value) {
+  const qKey = `${axisIdx}_${itemIdx}`;
+  answers[qKey] = value;
+  
+  // Update buttons
+  const qi = document.getElementById(`qi_${axisIdx}_${itemIdx}`);
+  qi.querySelectorAll('.scale-btn').forEach((btn, i) => {
+    const v = i + 1;
+    const isMid = v === 3;
+    if (v === value) {
+      btn.className = isMid ? 'scale-btn selected-mid' : 'scale-btn selected';
+    } else {
+      btn.className = 'scale-btn';
+    }
+  });
+  
+  checkAxisComplete(axisIdx);
+  updateProgress();
+}
+
+function checkAxisComplete(axisIdx) {
+  const axis = QUESTIONS[axisIdx];
+  const allAnswered = axis.items.every((_, i) => answers[`${axisIdx}_${i}`] !== undefined);
+  const btn = document.getElementById(`btn-next-${axisIdx}`);
+  if (btn) btn.className = allAnswered ? 'btn-next ready' : 'btn-next';
+}
+
+function updateProgress() {
+  const total = 16;
+  const answered = Object.keys(answers).length;
+  const pct = Math.round((answered / total) * 100);
+  document.getElementById('progress-fill').style.width = Math.max(6, pct) + '%';
+  const q = QUESTIONS[currentAxis];
+  const qNum = currentAxis * 4 + Object.keys(answers).filter(k => k.startsWith(currentAxis + '_')).length;
+  document.getElementById('progress-count').textContent = `${Math.min(answered + 1, 16)} of 16`;
+}
+
+function nextAxis(axisIdx) {
+  if (axisIdx < 3) {
+    renderAxis(axisIdx + 1);
+  } else {
+    document.getElementById('assessment').style.display = 'none';
+    document.getElementById('name-prompt').style.display = 'block';
+    window.scrollTo(0, 0);
+    setTimeout(() => document.getElementById('user-name-input').focus(), 300);
+  }
+}
+
+function confirmName() {
+  userName = (document.getElementById('user-name-input').value || '').trim();
+  document.getElementById('name-prompt').style.display = 'none';
+  showResults();
+}
+
+function showResults() {
+  document.getElementById('results').style.display = 'block';
+  window.scrollTo(0, 0);
+
+  // Personalise eyebrow greeting
+  const eyebrow = document.getElementById('results-eyebrow');
+  eyebrow.textContent = userName ? `${userName}'s creative ecology` : 'Your creative ecology';
+
+  // Compute axis scores: mean of 4 items, mapped from [1,5] to [-2,2]
+  const axisScores = QUESTIONS.map((axis, ai) => {
+    const vals = axis.items.map((_, i) => answers[`${ai}_${i}`]);
+    const mean = vals.reduce((a, b) => a + b, 0) / vals.length;
+    return ((mean - 3) / 2) * 2; // [1,5] -> [-2,2]
+  });
+
+  // Compute persona resonance: inverse of euclidean distance
+  const personaScores = PERSONAS.map(p => {
+    const dist = Math.sqrt(p.sig.reduce((acc, s, i) => acc + Math.pow(s - axisScores[i], 2), 0));
+    return { ...p, dist, resonance: 0 };
+  });
+
+  // Normalize to resonance %
+  const maxDist = Math.max(...personaScores.map(p => p.dist));
+  const minDist = Math.min(...personaScores.map(p => p.dist));
+  personaScores.forEach(p => {
+    p.resonance = Math.round(((maxDist - p.dist) / (maxDist - minDist + 0.001)) * 100);
+  });
+
+  // Sort by resonance (distance-based, raw)
+  personaScores.sort((a, b) => b.resonance - a.resonance || a.name.localeCompare(b.name));
+
+  // Build display scores: top persona always shows its true score,
+  // but if two personas share the same raw score the second gets -1 to avoid duplicate display values
+  // This prevents the two-100% problem without distorting the underlying ranking
+  const displayScores = personaScores.map((p, i) => {
+    if (i === 0) return p.resonance;
+    // If this score equals any earlier score, step it down by 1 per duplicate
+    let score = p.resonance;
+    for (let j = 0; j < i; j++) {
+      if (personaScores[j].resonance === p.resonance) score = Math.max(score - 1, 1);
+    }
+    return score;
+  });
+
+  // Leading persona
+  const leading = personaScores[0];
+  document.getElementById('results-leading-name').textContent = leading.name;
+  const taglineEl = document.getElementById('results-leading-family');
+  taglineEl.innerHTML = `${leading.family}<br><span style="font-size:0.85rem;font-style:italic;opacity:0.7;font-family:'DM Sans',sans-serif;letter-spacing:0.01em;">${leading.contribution}</span>`;
+  document.getElementById('results-leading-description').textContent = leading.description;
+
+  // Persona bars — top 8
+  const barsEl = document.getElementById('persona-bars');
+  barsEl.innerHTML = personaScores.slice(0, 8).map((p, i) => {
+    const col = FAMILY_COLORS[p.family] || '#1A6EA8';
+    const barClass = i === 0 ? 'bar-fill leading' : 'bar-fill';
+    const displayPct = displayScores[i];
+    return `<div class="constellation-item">
+      <div class="constellation-top">
+        <div>
+          <span class="constellation-name">${p.name}</span>
+          <span class="constellation-family"> · ${p.family}</span>
+        </div>
+        <span class="constellation-pct">${displayPct}%</span>
+      </div>
+      <div class="bar-track">
+        <div class="${barClass}" style="width:0%;background:${i===0?'var(--navy)':col}" data-w="${displayPct}%"></div>
+      </div>
+      <p style="font-size:11px;color:var(--muted);font-style:italic;margin-top:5px;line-height:1.5;">${p.bar}</p>
+    </div>`;
+  }).join('');
+
+  // Axis profile
+  const axisRows = document.getElementById('axis-rows');
+  const axisInterpret = [
+    (s) => s < -0.8 ? 'Your creativity activates most strongly in open, exploratory conditions, where the outcome is unknown and possibility leads.' : s > 0.8 ? 'Your creativity activates most strongly when anchored in real purpose — when the work will genuinely matter.' : 'You move fluidly between open exploration and purposeful making — a genuinely flexible value orientation.',
+    (s) => s < -0.8 ? 'Spacious, ecological time is your essential creative condition: unhurried and immersive, with room to arrive.' : s > 0.8 ? 'Urgency and momentum activate your creativity. You create best under pressure and with clear edges.' : 'You can work in both spacious and sprint conditions. Your temporal orientation is adaptable.',
+    (s) => s < -0.8 ? 'Your creative impulse is ignited before the work begins. The pull from within precedes the first step.' : s > 0.8 ? 'Your creative motivation is emergent; it builds through the act of making itself.' : 'Your motivation moves between ignition and emergence. You may find different projects call for different starting conditions.',
+    (s) => s < -0.8 ? 'You enter creativity through thinking and concept: ideas and frameworks form before anything is made.' : s > 0.8 ? 'You enter creativity through making and movement. The body leads, and understanding follows.' : 'You move between thinking and making with flexibility — your mode of engagement adapts to the work.',
+  ];
+  axisRows.innerHTML = AXIS_INFO.map((ax, i) => {
+    const score = axisScores[i];
+    const pct = Math.round(((score + 2) / 4) * 100);
+    const interpret = axisInterpret[i](score);
+    return `<div style="margin-bottom:20px;">
+      <div class="axis-code-label">${ax.code} — ${ax.name}</div>
+      <div class="axis-row">
+        <span class="axis-pole-label">${ax.poleL}</span>
+        <div class="axis-spectrum">
+          <div class="axis-marker" style="left:${pct}%"></div>
+        </div>
+        <span class="axis-pole-label right">${ax.poleR}</span>
+      </div>
+      <p style="font-size:11px;color:var(--muted);margin-top:5px;font-style:italic;line-height:1.55;">${interpret}</p>
+    </div>`;
+  }).join('');
+
+  // Family distribution
+  const familyTotals = {};
+  const families = ['Exploration & Vision', 'Structure & Cultivation', 'Connection & Meaning', 'Activation & Transformation'];
+  const familyTaglines = {
+    'Exploration & Vision': 'Before form, before structure. Where creativity first stirs.',
+    'Structure & Cultivation': 'Where creativity takes form, holds, and grows over time.',
+    'Connection & Meaning': 'Where creativity becomes relational, shared, and meaningful.',
+    'Activation & Transformation': 'Where movement, depth, and change occur.',
+  };
+  const familyDescriptors = {
+    'Exploration & Vision': 'Dreamer · Explorer · Visionary · Improviser',
+    'Structure & Cultivation': 'Architect · Gardener · Cartographer · Maker',
+    'Connection & Meaning': 'Weaver · Translator · Storyteller · Witness',
+    'Activation & Transformation': 'Catalyst · Alchemist · Seeker · Listener',
+  };
+  families.forEach(f => { familyTotals[f] = 0; });
+  personaScores.forEach(p => { familyTotals[p.family] += p.resonance; });
+  const totalFamilyScore = Object.values(familyTotals).reduce((a, b) => a + b, 0);
+  const familyGrid = document.getElementById('family-grid');
+  familyGrid.innerHTML = families.map(f => {
+    const pct = Math.round((familyTotals[f] / totalFamilyScore) * 100);
+    const color = FAMILY_COLORS[f];
+    return `<div class="family-card" style="border-left:4px solid ${color};border-radius:0 4px 4px 0;">
+      <div class="family-card-name" style="color:${color}">${f}</div>
+      <div style="font-size:11px;color:var(--muted);font-style:italic;margin-bottom:6px;line-height:1.4;">${familyTaglines[f]}</div>
+      <div class="family-card-pct" style="color:var(--navy)">${pct}%</div>
+      <div class="family-bar-track">
+        <div class="family-bar-fill" style="width:${pct}%;background:${color}"></div>
+      </div>
+      <div style="font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5;">${familyDescriptors[f]}</div>
+    </div>`;
+  }).join('');
+
+  // Shadow archetypes — bottom 2 by resonance (most distant)
+  const shadows = [...personaScores].slice(-2).reverse();
+  const shadowCards = document.getElementById('shadow-cards');
+  shadowCards.innerHTML = shadows.map(p => {
+    // Build axis contrast sentence
+    const axisNames = ['Value', 'Time', 'Motivation', 'Mode'];
+    const poleLabelsL = ['novelty & openness', 'spacious & ecological time', 'ignited — pull from within', 'thinking & concept'];
+    const poleLabelsR = ['usefulness & purpose', 'sprint & urgency', 'emergent — drawn through process', 'making & embodied'];
+    const contrasts = p.sig.map((s, i) => {
+      const myScore = axisScores[i];
+      if (Math.abs(s - myScore) < 0.8) return null;
+      const shadowPole = s > 0 ? poleLabelsR[i] : poleLabelsL[i];
+      return shadowPole;
+    }).filter(Boolean);
+    const contrastText = contrasts.length > 0
+      ? `Its conditions draw strongly toward ${contrasts.join(', ')}, the opposite of what your current profile calls forward.`
+      : `Its axis signature sits at the furthest point from your current creative conditions across multiple dimensions.`;
+    return `<div class="shadow-card">
+      <div class="shadow-label">Shadow archetype · furthest from your current profile</div>
+      <div class="shadow-name">${p.name}</div>
+      <div class="shadow-desc">The ${p.name} energy: ${p.contribution}. ${contrastText} This is not a deficit; it is an invitation. What would it take to create the conditions where this energy could emerge?</div>
+    </div>`;
+  }).join('');
+
+  // Return to Awareness — strongest axis weighted composite
+  // Find the axis with the strongest deviation from center
+  const axisKeys = [
+    { neg: 'A01_novelty',   pos: 'A01_usefulness' },
+    { neg: 'A02_spacious',  pos: 'A02_sprint' },
+    { neg: 'A03_ignited',   pos: 'A03_emergent' },
+    { neg: 'A04_thinking',  pos: 'A04_making' },
+  ];
+  const allCentered = axisScores.every(s => Math.abs(s) < 0.8);
+  let awarenessText = AWARENESS_TEXTS.centered;
+  if (!allCentered) {
+    // Find axis with highest absolute score
+    const maxIdx = axisScores.reduce((best, s, i) => Math.abs(s) > Math.abs(axisScores[best]) ? i : best, 0);
+    const score = axisScores[maxIdx];
+    awarenessText = score < 0
+      ? AWARENESS_TEXTS[axisKeys[maxIdx].neg]
+      : AWARENESS_TEXTS[axisKeys[maxIdx].pos];
+  }
+  document.getElementById('contemplative-text').textContent = awarenessText;
+
+  // Animate bars after render
+  setTimeout(() => {
+    document.querySelectorAll('.bar-fill[data-w]').forEach(el => {
+      el.style.width = el.getAttribute('data-w');
+    });
+  }, 100);
+}
+
+function restart() {
+  answers = {};
+  currentAxis = 0;
+  userName = '';
+  document.getElementById('user-name-input').value = '';
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('name-prompt').style.display = 'none';
+  document.getElementById('cover').style.display = 'flex';
+  window.scrollTo(0, 0);
+}
+
+// Beta protection — deter casual copying
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+  if (e.key === 'F12') e.preventDefault();
+  if (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) e.preventDefault();
+  if (e.ctrlKey && e.key === 'U') e.preventDefault();
+  if (e.ctrlKey && e.key === 'S') e.preventDefault();
+});
+
+function downloadPDF() {
+  const btn = document.getElementById('btn-pdf');
+  btn.disabled = true;
+  btn.textContent = 'Generating PDF…';
+
+  const leadingName = document.getElementById('results-leading-name').textContent;
+  const leadingFamily = document.getElementById('results-leading-family').textContent;
+  const namePrefix = userName ? userName.replace(/\s+/g, '-') + '-' : '';
+  const filename = 'CCI-Results-' + namePrefix + leadingName.replace(/\s+/g, '-') + '.pdf';
+
+  // Build a clean flat HTML element for pdf capture
+  const wrap = document.createElement('div');
+  wrap.style.cssText = 'width:680px;font-family:Georgia,serif;color:#1a1a1a;background:#fff;padding:40px 48px;';
+
+  // Header
+  wrap.innerHTML = `
+    <div style="border-bottom:3px solid #0D2233;padding-bottom:20px;margin-bottom:28px;">
+      <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#2E86C1;margin-bottom:8px;">CreActivity · Creativity Conditions Inventory</div>
+      <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#888;margin-bottom:16px;">${userName ? userName + '\u2019s creative ecology' : 'Your creative ecology'}</div>
+      <div style="font-size:38px;font-weight:400;color:#0D2233;line-height:1.1;margin-bottom:6px;">${leadingName}</div>
+      <div style="font-size:14px;color:#555;font-style:italic;margin-bottom:12px;">${leadingFamily}</div>
+      <div style="font-size:13px;color:#444;font-style:italic;line-height:1.8;font-family:Georgia,serif;">${leading.description}</div>
+    </div>
+
+    <div style="margin-bottom:28px;">
+      <div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#0D2233;border-bottom:1px solid #ddd;padding-bottom:6px;margin-bottom:16px;font-weight:600;">Active personas — resonance profile</div>
+      ${Array.from(document.querySelectorAll('#persona-bars .constellation-item')).map(item => {
+        const name = item.querySelector('.constellation-name')?.textContent || '';
+        const family = item.querySelector('.constellation-family')?.textContent || '';
+        const pct = item.querySelector('.constellation-pct')?.textContent || '';
+        const pctNum = parseInt(pct);
+        const isLeading = pctNum === 100;
+        return `<div style="margin-bottom:10px;">
+          <div style="display:table;width:100%;table-layout:fixed;margin-bottom:4px;">
+            <div style="display:table-cell;"><span style="font-size:12px;font-weight:${isLeading?'700':'500'};color:#0D2233;">${name}</span><span style="font-weight:400;font-style:italic;color:#888;font-size:11px;">${family}</span></div>
+            <div style="display:table-cell;width:50px;text-align:right;"><span style="font-size:14px;color:#2E86C1;font-style:italic;">${pct}</span></div>
+          </div>
+          <div style="height:4px;background:#eee;border-radius:2px;"><div style="height:4px;background:${isLeading?'#0D2233':'#2E86C1'};border-radius:2px;width:${pct};"></div></div>
+        </div>`;
+      }).join('')}
+    </div>
+
+    <div style="margin-bottom:24px;">
+      <div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#0D2233;border-bottom:1px solid #ddd;padding-bottom:6px;margin-bottom:14px;font-weight:600;">Axis polarity profile</div>
+      ${Array.from(document.querySelectorAll('#axis-rows > div')).map(row => {
+        const code = row.querySelector('.axis-code-label')?.textContent || '';
+        const poleL = row.querySelector('.axis-pole-label:not(.right)')?.textContent || '';
+        const poleR = row.querySelector('.axis-pole-label.right')?.textContent || '';
+        const marker = row.querySelector('.axis-marker');
+        const rawPct = marker ? parseInt(marker.style.left) : 50;
+        const clampedPct = Math.min(96, Math.max(4, rawPct));
+        const dotOffset = Math.round((clampedPct / 100) * 360);
+        return `<div style="margin-bottom:12px;">
+          <div style="font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#2E86C1;margin-bottom:5px;font-weight:600;">${code}</div>
+          <div style="display:table;width:100%;table-layout:fixed;">
+            <div style="display:table-cell;width:130px;font-size:10px;color:#888;font-style:italic;text-align:right;padding-right:10px;vertical-align:middle;">${poleL}</div>
+            <div style="display:table-cell;vertical-align:middle;">
+              <div style="height:4px;background:#eee;border-radius:2px;position:relative;margin:5px 0;">
+                <div style="height:4px;background:#0D2233;border-radius:2px;width:${clampedPct}%;"></div>
+                <div style="width:12px;height:12px;border-radius:50%;background:#0D2233;border:2px solid #fff;outline:1px solid #0D2233;position:absolute;top:-4px;left:calc(${clampedPct}% - 6px);"></div>
+              </div>
+            </div>
+            <div style="display:table-cell;width:130px;font-size:10px;color:#888;font-style:italic;padding-left:10px;vertical-align:middle;">${poleR}</div>
+          </div>
+        </div>`;
+      }).join('')}
+    </div>
+
+    <div style="margin-bottom:24px;">
+      <div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#0D2233;border-bottom:1px solid #ddd;padding-bottom:6px;margin-bottom:10px;font-weight:600;">Family distribution</div>
+      <div style="font-size:10px;color:#888;font-style:italic;margin-bottom:14px;line-height:1.6;">The 16 personas are organized into four creative families. Your distribution shows how your resonance is weighted across these domains — a higher percentage means more of that family's conditions match your current profile.</div>
+      <div style="display:table;width:100%;table-layout:fixed;border-collapse:separate;border-spacing:6px 0;">
+        ${Array.from(document.querySelectorAll('#family-grid .family-card')).map(card => {
+          const name = card.querySelector('.family-card-name')?.textContent || '';
+          const pct = card.querySelector('.family-card-pct')?.textContent || '';
+          const bar = card.querySelector('.family-bar-fill');
+          const color = bar ? bar.style.background : '#2E86C1';
+          const pctNum = parseInt(pct);
+          const descriptors = {
+            'Exploration & Vision': 'Dreamer · Explorer · Visionary · Improviser',
+            'Structure & Cultivation': 'Architect · Gardener · Cartographer · Maker',
+            'Connection & Meaning': 'Weaver · Bridge · Storyteller · Witness',
+            'Activation & Transformation': 'Catalyst · Alchemist · Seeker · Listener',
+          };
+          const desc = descriptors[name] || '';
+          return `<div style="display:table-cell;border-left:3px solid ${color};border-top:1px solid #eee;border-right:1px solid #eee;border-bottom:1px solid #eee;border-radius:0 4px 4px 0;padding:10px 10px;vertical-align:top;">
+            <div style="font-size:8px;text-transform:uppercase;letter-spacing:0.08em;color:${color};margin-bottom:4px;line-height:1.4;font-weight:600;">${name}</div>
+            <div style="font-size:22px;font-weight:300;color:#0D2233;line-height:1;margin-bottom:5px;">${pct}</div>
+            <div style="height:3px;background:#eee;border-radius:1px;margin-bottom:6px;"><div style="height:3px;background:${color};width:${pctNum}%;border-radius:1px;"></div></div>
+            <div style="font-size:8px;color:#aaa;font-style:italic;line-height:1.4;">${desc}</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>
+
+    <div style="margin-bottom:28px;">
+      <div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#0D2233;border-bottom:1px solid #ddd;padding-bottom:6px;margin-bottom:8px;font-weight:600;">Shadow archetypes</div>
+      <div style="font-size:11px;color:#888;font-style:italic;margin-bottom:14px;">The creative energies furthest from your current profile — not what you lack, but what requires different conditions to activate.</div>
+      ${Array.from(document.querySelectorAll('#shadow-cards .shadow-card')).map(card => {
+        const label = card.querySelector('.shadow-label')?.textContent || '';
+        const name = card.querySelector('.shadow-name')?.textContent || '';
+        const desc = card.querySelector('.shadow-desc')?.textContent || '';
+        return `<div style="background:#f5f0e8;border-radius:4px;padding:14px 16px;margin-bottom:10px;">
+          <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:#888;margin-bottom:4px;">${label}</div>
+          <div style="font-size:18px;color:#0D2233;margin-bottom:6px;">${name}</div>
+          <div style="font-size:11px;color:#555;font-style:italic;line-height:1.6;">${desc}</div>
+        </div>`;
+      }).join('')}
+    </div>
+
+    <div style="background:#0D2233;border-radius:4px;padding:20px 22px;margin-bottom:28px;">
+      <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#7EC8E3;margin-bottom:6px;">The Return to Awareness</div>
+      <div style="font-size:10px;color:rgba(255,255,255,0.4);font-style:italic;margin-bottom:12px;line-height:1.6;">Awareness is the center from which all creative conditions become legible. Before push or pull — there is the capacity to notice.</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.85);font-style:italic;line-height:1.75;">${document.getElementById('contemplative-text')?.textContent || ''}</div>
+    </div>
+
+    <div style="border-top:1px solid #ddd;padding-top:14px;text-align:center;">
+      <div style="font-size:9px;color:#aaa;font-style:italic;line-height:1.7;">Beta Testing Version — Not for Public Distribution<br>
+      The CCI is a resonance mapping instrument grounded in the Creativity Persona Map (CPM) framework.<br>
+      © 2025 CreActivity · Chloe Tiryaki, ACC · creactivity.ca · All rights reserved</div>
+    </div>
+  `;
+
+  document.body.appendChild(wrap);
+
+  const opt = {
+    margin: [8, 8, 8, 8],
+    filename,
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff' },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: 'avoid-all' }
+  };
+
+  html2pdf().set(opt).from(wrap).save().then(() => {
+    document.body.removeChild(wrap);
+    btn.disabled = false;
+    btn.textContent = 'Download results as PDF';
+  }).catch(() => {
+    document.body.removeChild(wrap);
+    btn.disabled = false;
+    btn.textContent = 'Download results as PDF';
+  });
+}
+</script>
+</body>
+</html>
